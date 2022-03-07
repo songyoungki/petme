@@ -9,10 +9,10 @@
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <title>펫미</title>
 <link rel="stylesheet" href="../resources/css/common.css?ver=a2">
-<link rel="stylesheet" href="../resources/css/layout.css?ver=b4">
+<link rel="stylesheet" href="../resources/css/layout.css?ver=b7">
 <link rel="stylesheet" href="../resources/css/main.css">
 <script src="../resources/js/jquery-3.4.1.js"></script>
-<script src="../resources/js/common.js?ver=b1"></script>
+<script src="../resources/js/common.js?ver=b2"></script>
 
 <!-- 스와이퍼 4.5.1 -->
 <link rel="stylesheet" href="../resources/css/swiper.min.css">
@@ -25,10 +25,24 @@
     <header class="main_header">
         <nav class="gnb">
             <div class="alert"><span class="blind">알림</span></div>
+            <!-- 위치지정 [D] 버튼클릭시 토스트배너 출력 -->
             <a href="#" class="location">
                 <span class="loca_tit">강남구 역삼동</span>
                 <span class="loca_arrow"><img style="vertical-align: initial;" src="../images/common/icon_down.png" alt="" /></span>
             </a>
+
+            <div class="location_box">
+                <div class="dim_bg"></div>
+                <div class="location_content">
+                    <a href="#" class="btn_close"><span class="blind">닫기</span></a>
+                    <p>내 위치 지정</p>
+                    <div class="loca_list">
+                        <a href="../sub/location.html" class="loca_my">현위치로 재검색</a>
+                        <a href="../sub/address_search.html" class="loca_map">지도로 위치지정</a>
+                    </div>
+                </div>
+            </div>
+            <!-- //위치지정 -->
             <!-- 검색 -->
             <button type="button" title="전체검색" class="search"><span class="blind">전체검색</span></button>
             <div class="search_wrap">
@@ -252,7 +266,7 @@
                             <div class="text_wrap">
                                 <p class="title">독살롱 다음 <br>애견 미용실</p>
                                 <p class="desc">댕댕이를 위한 스트레스 없..</p>
-                                <p class="rate"><span class="rate_all">5.0</span>(1,253)</p>
+                                <p class="rate"><span class="rate_all">5.0</span><span class="rate_t1">(1,253)</span></p>
                             </div>
                         </a>
                     </div>
@@ -265,7 +279,7 @@
                             <div class="text_wrap">
                                 <p class="title">그루밍 살롱 <br>애견 댕댕이 미용실</p>
                                 <p class="desc">댕댕이를 위한 스트레스 없..</p>
-                                <p class="rate"><span class="rate_all">5.0</span>(1,253)</p>
+                                <p class="rate"><span class="rate_all">5.0</span><span class="rate_t1">(1,253)</span></p>
                             </div>
                         </a>
                     </div>
@@ -278,7 +292,7 @@
                             <div class="text_wrap">
                                 <p class="title">견생컷</p>
                                 <p class="desc">댕댕이를 위한 스트레스 없..</p>
-                                <p class="rate"><span class="rate_all">5.0</span>(1,253)</p>
+                                <p class="rate"><span class="rate_all">5.0</span><span class="rate_t1">(1,253)</span></p>
                             </div>
                         </a>
                     </div>
@@ -585,4 +599,4 @@
 
 </div>
 </body>
-</html>
+</html> 
