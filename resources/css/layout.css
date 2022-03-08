@@ -789,7 +789,7 @@ body {
     width: 182px; margin: 24px auto 0px;}
 
 .dot{position: absolute; z-index: 20; top: 150px; width: 36px;}
-.icon_dot{position: absolute; z-index: 20; top: 150px; width: 36px; right:24px;}
+.icon_dot{position: absolute; z-index: 20; top: 150px; width: 46px; right:24px;}
 
 #point {
 	position: absolute;
