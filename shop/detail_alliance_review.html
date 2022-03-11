@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css?ver=a1">
+<link rel="stylesheet" href="../resources/css/shop.css?ver=b7">
+
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common_shop.js?ver=b1"></script>
+
+<!-- 스와이퍼 4.5.1 -->
+<link rel="stylesheet" href="../resources/css/swiper.min.css">
+<script src="../resources/js/swiper.min.js"></script>
+<style>
+input[type=checkbox] {
+    display:none;
+}
+
+#checker2 + label {
+    cursor: pointer;
+    padding-left: 24px;
+    background-repeat: no-repeat;
+    background-image: url('../images/shop/review_check_off.png');
+    background-size: 18px;
+    color: #1a1a1a;
+    font-weight: 400;
+    font-size: 14px;
+    padding-top: 1px;
+
+}
+#checker2:checked + label {
+    background-image: url('../images/shop/review_check_on.png');
+}
+</style>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+    <!-- 상단 -->
+
+
+<!-- 내주변 매장 포트폴리오 -->
+       <section class="shop_section_review">
+            <div class="">
+                <div class="sect_title">
+                 
+				 <div class="detail_review">
+	   <div class="detail_review_inner">
+		<span class="t1"><img  src="../images/shop/arrow__48_b.png"></span>
+		<span class="t2">그루밍살롱 애견미용실</span>
+		<span class="t3"><img  src="../images/shop/icon_home_b.png"></span>
+				 </div>
+              </div>
+                <div class="portfolio_wrap">
+                    <ul class="portfolio_tab">
+                        <li data-id="portfolio_con1" class="on">전체</li>
+                        <li data-id="portfolio_con2" >반려견미용</li>
+                        <li data-id="portfolio_con3">반려묘미용</li>
+                        <li data-id="portfolio_con4">호텔</li>
+                        <li data-id="portfolio_con5">유치원</li>
+                    </ul>
+
+					
+
+                    <!-- 포트폴리오 : 내용1 -->
+                    <div id="portfolio_con1" class="content on">
+                        <ul class="portfolio_content">
+						 <div class="inner">
+					 <div class="detail_review_text_wrap">
+                               <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">4.7</span><span class="rate_t3">리뷰 (1,253)</span></p>
+                       </div>
+					   <div class="agree2">
+                    <p><input type="checkbox"  name="checker" id="checker2" value="1" onclick="click_check();"> <label for="checker2">포토리뷰 </p>
+					
+				        </div>
+					  </div>
+
+                            <li>
+                                <div class="text_wrap">
+                                <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">5.0</span><span class="rate_t3">반려견미용</span><span class="rate_t4">(가위컷)</span></p>
+
+								<p class="rate2"><img  src="../images/shop/angelos-michalopoulos-VzG64C5T7p4-unsplash.png"><img  src="../images/shop/berkay-gumustekin-ngqyo2AYYnE-unsplash.png">
+								<img  src="../images/shop/freddie-marriage-iYQC9xWMvw4-unsplash.png"><img  src="../images/shop/jacco-rienks-rxLQltjvEuM-unsplash.png">
+								</p>
+
+								<p class="rate3">
+								 우리 댕댕이 너무 예쁘게 잘라주셔서 감사드려요^^ 원장님 너무 친절하시고 성격도 너무 좋으세요~
+								</p>
+
+								<p class="rate4">
+								 <span class="rate_t1">홍*동</span>
+								 <span class="rate_t2">2일전</span>
+								</p>
+
+								<div class="rate5">
+								 <div class="p1"><span class="rate_t1">그루밍살롱 애견 미용실</span><span class="rate_t2">2일전</span></div>
+								 <div class="p2"><span class="rate_t1">기분좋은 리뷰 남겨주셔서 진심으로 감사드립니다.자주 이용해 주세요.<br>감사합니다.</span></div>
+								</div>
+
+                            </div>
+                            </li>
+							 <li>
+                                <div class="text_wrap">
+                                <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">4.7</span><span class="rate_t3">반려묘미용</span><span class="rate_t4">(목욕)</span></p>
+
+								
+
+								
+
+								<p class="rate4">
+								 <span class="rate_t1">홍*동</span>
+								 <span class="rate_t2">1달전</span>
+								</p>
+
+								
+
+                            </div>
+                            </li>
+                          <li>
+                                <div class="text_wrap">
+                                <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">4.7</span><span class="rate_t3">반려견미용</span><span class="rate_t4">(목욕)</span></p>
+
+								
+
+								<p class="rate3">
+								 우리 댕댕이 너무 예쁘게 잘라주셔서 감사드려요^^ 원장님 너무 친절하시고 성격도 너무 좋으세요~
+								</p>
+
+								<p class="rate4">
+								 <span class="rate_t1">홍*동</span>
+								 <span class="rate_t2">1달전</span>
+								</p>
+
+								
+
+                            </div>
+                            </li>
+							 <li>
+                                <div class="text_wrap">
+                                <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">4.7</span><span class="rate_t3">반려묘미용</span><span class="rate_t4">(목욕)</span></p>
+
+								
+
+								<p class="rate3">
+								 우리 냐옹이 너무 예쁘게 잘라주셔서 감사드려요^^ 원장님 너무 친절하시고 성격도 너무 좋으세요~
+								</p>
+
+								<p class="rate4">
+								 <span class="rate_t1">홍*동</span>
+								 <span class="rate_t2">1달전</span>
+								</p>
+
+								
+
+                            </div>
+                            </li>
+                           <li>
+                                <div class="text_wrap">
+                                <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">5.0</span><span class="rate_t3">호텔</span><span class="rate_t4">(VIP)</span></p>
+
+								<p class="rate3">
+								 우리 댕댕이 너무 예쁘게 잘라주셔서 감사드려요^^ 원장님 너무 친절하시고 성격도 너무 좋으세요~
+								</p>
+
+								<p class="rate4">
+								 <span class="rate_t1">홍*동</span>
+								 <span class="rate_t2">1년전</span>
+								</p>
+
+							
+                            </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //포트폴리오 : 내용1 -->
+                    <!-- 포트폴리오 : 내용2 -->
+                    <div id="portfolio_con2" class="content">
+					 <div class="inner">
+					 <div class="detail_review_text_wrap">
+                               <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">4.7</span><span class="rate_t3">리뷰 (1,253)</span></p>
+                       </div>
+					   <div class="agree2">
+                    <p><input type="checkbox"  name="checker" id="checker2" value="1" onclick="click_check();"> <label for="checker2">포토리뷰 </p>
+					
+				        </div>
+					  </div>
+
+                        <ul class="portfolio_content">
+                           <li>
+                                <div class="text_wrap">
+                                <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">5.0</span><span class="rate_t3">반려견미용</span><span class="rate_t4">(가위컷)</span></p>
+
+								<p class="rate2"><img  src="../images/shop/angelos-michalopoulos-VzG64C5T7p4-unsplash.png"><img  src="../images/shop/berkay-gumustekin-ngqyo2AYYnE-unsplash.png">
+								<img  src="../images/shop/freddie-marriage-iYQC9xWMvw4-unsplash.png"><img  src="../images/shop/jacco-rienks-rxLQltjvEuM-unsplash.png">
+								</p>
+
+								<p class="rate3">
+								 우리 댕댕이 너무 예쁘게 잘라주셔서 감사드려요^^ 원장님 너무 친절하시고 성격도 너무 좋으세요~
+								</p>
+
+								<p class="rate4">
+								 <span class="rate_t1">홍*동</span>
+								 <span class="rate_t2">2일전</span>
+								</p>
+
+								<div class="rate5">
+								 <div class="p1"><span class="rate_t1">그루밍살롱 애견 미용실</span><span class="rate_t2">2일전</span></div>
+								 <div class="p2"><span class="rate_t1">기분좋은 리뷰 남겨주셔서 진심으로 감사드립니다.자주 이용해 주세요.<br>감사합니다.</span></div>
+								</div>
+
+                            </div>
+                            </li>
+                          <li>
+                                <div class="text_wrap">
+                                <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">4.7</span><span class="rate_t3">반려견미용</span><span class="rate_t4">(목욕)</span></p>
+
+								
+
+								<p class="rate3">
+								 우리 댕댕이 너무 예쁘게 잘라주셔서 감사드려요^^ 원장님 너무 친절하시고 성격도 너무 좋으세요~
+								</p>
+
+								<p class="rate4">
+								 <span class="rate_t1">홍*동</span>
+								 <span class="rate_t2">1달전</span>
+								</p>
+
+								
+
+                            </div>
+                            </li>
+                           <li>
+                                <div class="text_wrap">
+                                <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">5.0</span><span class="rate_t3">호텔</span><span class="rate_t4">(VIP)</span></p>
+
+								<p class="rate3">
+								 우리 댕댕이 너무 예쁘게 잘라주셔서 감사드려요^^ 원장님 너무 친절하시고 성격도 너무 좋으세요~
+								</p>
+
+								<p class="rate4">
+								 <span class="rate_t1">홍*동</span>
+								 <span class="rate_t2">1년전</span>
+								</p>
+
+							
+                            </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //포트폴리오 : 내용2 -->
+                    <!-- 포트폴리오 : 내용3 -->
+                    <div id="portfolio_con3" class="content">
+					 <div class="inner">
+					 <div class="detail_review_text_wrap">
+                               <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">4.7</span><span class="rate_t3">리뷰 (1,253)</span></p>
+                       </div>
+					   <div class="agree2">
+                    <p><input type="checkbox"  name="checker" id="checker2" value="1" onclick="click_check();"> <label for="checker2">포토리뷰 </p>
+					
+				        </div>
+					  </div>
+
+                        <ul class="portfolio_content">
+                            <li>
+                                <div class="text_wrap">
+                                <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">4.7</span><span class="rate_t3">반려묘미용</span><span class="rate_t4">(목욕)</span></p>
+
+								
+
+								<p class="rate3">
+								 우리 냐옹이 너무 예쁘게 잘라주셔서 감사드려요^^ 원장님 너무 친절하시고 성격도 너무 좋으세요~
+								</p>
+
+								<p class="rate4">
+								 <span class="rate_t1">홍*동</span>
+								 <span class="rate_t2">1달전</span>
+								</p>
+
+								
+
+                            </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //포트폴리오 : 내용3 -->
+                    <!-- 포트폴리오 : 내용4 -->
+                    <div id="portfolio_con4" class="content">
+					 <div class="inner">
+					 <div class="detail_review_text_wrap">
+                               <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">4.7</span><span class="rate_t3">리뷰 (1,253)</span></p>
+                       </div>
+					   <div class="agree2">
+                    <p><input type="checkbox"  name="checker" id="checker2" value="1" onclick="click_check();"> <label for="checker2">포토리뷰 </p>
+					
+				        </div>
+					  </div>
+
+                        <ul class="portfolio_content">
+                             <li>
+                                <div class="text_wrap">
+                                <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">5.0</span><span class="rate_t3">호텔</span><span class="rate_t4">(VIP)</span></p>
+
+								<p class="rate3">
+								 우리 댕댕이 너무 예쁘게 잘라주셔서 감사드려요^^ 원장님 너무 친절하시고 성격도 너무 좋으세요~
+								</p>
+
+								<p class="rate4">
+								 <span class="rate_t1">홍*동</span>
+								 <span class="rate_t2">1년전</span>
+								</p>
+
+							
+                            </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //포트폴리오 : 내용4 -->
+					<!-- 포트폴리오 : 내용5 -->
+                    <div id="portfolio_con5" class="content">
+					 <div class="inner">
+					 <div class="detail_review_text_wrap">
+                               <p class="rate"><span class="rate_t1"><img  src="../images/common/icon_star.png"></span><span class="rate_t2">0.0</span><span class="rate_t3">리뷰 (0)</span></p>
+                       </div>
+					   <div class="agree2">
+                    <p><input type="checkbox"  name="checker" id="checker2" value="1" onclick="click_check();"> <label for="checker2">포토리뷰 </p>
+					
+				        </div>
+					  </div>
+
+                        <ul class="portfolio_content">
+                             <li>
+                                <div class="text_wrap">
+                               
+
+								<p class="rate6">
+								 등록된 리뷰가 없습니다.
+								</p>
+
+							
+                            </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //포트폴리오 : 내용5 -->
+                </div>
+            </div>
+        </section>
+        <!-- //내주변 매장 포트폴리오 -->
+
+
+
+
+      
+   
+
+</div>
+</body>
+</html>
