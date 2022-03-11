@@ -13,10 +13,8 @@ $(function() {
         allowTouchMove : true,
         loop: true,
         speed: 1000,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
+        zoom: true,
+        autoplay: false,
         pagination: {
             el: '.slider_visual .swiper-pagination',
             type: 'fraction',
