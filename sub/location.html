@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <title>펫미</title>
 <link rel="stylesheet" href="../resources/css/common.css?ver=a2">
-<link rel="stylesheet" href="../resources/css/layout.css?ver=b4">
+<link rel="stylesheet" href="../resources/css/layout.css?ver=c1">
 <link rel="stylesheet" href="../resources/css/main.css">
 <script src="../resources/js/jquery-3.4.1.js"></script>
 <script src="../resources/js/common.js?ver=b1"></script>
@@ -27,7 +27,7 @@
     <!-- //서브타이틀 -->
 
     <!-- 본문내용 -->
-    <div class="container sub_content">
+    <div class="container sub_content no_margin" >
         <!-- 위치지정 지도 -->
         <section class="location_warp">
             
@@ -40,8 +40,13 @@
                         <input type="text" name="s" value="" title="검색어를 입력" onclick="location.href='../sub/address_search.html'" placeholder="주소를 검색해보세요." class="search_result">
                     </fieldset>
                 </form>
+
+
+				
             </div>
             <!-- //주소검색 -->
+
+			<div style="position: absolute; top:150px; z-index:10; left:30px; "><img src="../images/sub/dot.png" class="dot2"  alt="" /></div>
 
             <!-- 현재주소 -->
             <div class="location_my">강서구 가양동</div>
@@ -53,7 +58,7 @@
 
           <!-- //버튼-지역설정완료 -->
 
- <div id="map" style="width:100%;height:600px;">
+ <div id="map" style="width:100%;height:100vh;">
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a39979d502d34425713e4aefe1a9c32c"></script>
 <script>
     var lat = "";
