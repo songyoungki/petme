@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+/*modal style*/
+.modal-layer { display: none; position: absolute; top: 50%; left: 50%; z-index: 20; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1); -moz-transform: translate(-50%, -50%) scale(1); -ms-transform: translate(-50%, -50%) scale(1); -o-transform: translate(-50%, -50%) scale(1); width: 320px; max-width: 90%; height:283px; background: #fff; border-radius: 8px; }
+.dim-layer { display: none; position: fixed; _position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; }
+.dim-layer-on { display: block; }
+.dim-layer .dim-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; opacity: .5; filter: alpha(opacity=50); }
+.dim-layer .modal-layer { display: block; }
+.dim-layer .modal-tit { height: 44px; line-height: 42px; font-size: 14px; font-weight: 700; color: #000; text-align: center; }
+.dim-layer .modal-close { position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; border: none; background: url('../img/btn_x1.png') center center no-repeat; background-size: contain; }
+
+
+/*다이얼 모달창*/
+.dim-layer-dial { display: block; visibility: hidden; }
+.dim-layer-dial.active { visibility: visible; }
+.dial { background: none !important; }
+.dial-area { display: flex; align-items: center; position: relative; height: 164px; margin-top: 32px; padding: 0 24px; box-sizing: border-box;  overflow: hidden; }
+/* .dial-area .line-area { position: absolute; top: 28px left: 0; width: calc(100% - 48px); height: 46px; margin: 0 auto; padding: 0; border-top: 1px solid #999; border-bottom: 1px solid #999; box-sizing: border-box; } */
+.dial-area .line-area {position: absolute; top: 68px; left: 24px; width: calc(100% - 48px); height: 36px; margin: 0 auto; padding: 0;  box-sizing: border-box;  /* background-color: #010101; */  background-color: rgba(244, 244, 244, 1);
+	}
+.dial-area .drum-wrapper { width: 33.33%; }
+div.drum-wrapper div.container, div.drum-wrapper figure { height: 50px; line-height: 25px; font-size: 16px; font-weight: 400; text-align: center;  }
+.dim-layer-dial .modal-container { padding-bottom: 24px; box-sizing: border-box; }
+
+.dim-layer-dial-v1 .modal-layer { width: 240px; }
+.dim-layer-dial-v1 .dial-area .drum-wrapper { width: 100%; }
+
+
+/*셀렉트 모달창*/
+.dim-layer-bottom .modal-layer { top: auto; left: 0; right: 0; bottom: -182px; width: 100%; max-width: 680px; margin: 0 auto; padding: 0 16px 12px; border-radius: 12px 12px 0 0; box-sizing: border-box; background: #fff; transform: none; transition: 0.5s all ease; }
+.dim-layer-bottom .modal-b-close { width: 100%; height: 20px; border: none; background: url('../img/img_bar1.png') center center no-repeat; background-size: auto 4px; }
+.modal-menu li { height: 50px; line-height: 50px; border-bottom: 1px solid #ddd; box-sizing: border-box; font-size: 12px; font-weight: 400; color: #000; text-align: center; cursor: pointer; }
+
+
+/*메시지 모달창*/
+.dim-layer-message .modal-layer { padding: 45px 38px 24px; box-sizing: border-box; }
+.dim-layer-message .btns { margin-top: 45px; }
+.modal-message { font-size: 12px; font-weight: 400; color: #000; text-align: center; line-height: 16px; }
+.modal-message2 { margin-top: 11px; font-size: 10px; font-weight: 400; color: #999; text-align: center; line-height: 14px; }
+.modal-message2 span { color: #f76841; }
+
+
+/*리스트 모달창*/
+.dim-layer-list .modal-layer { height: 227px; }
+
+
+/*공지사항 모달창*/
+.dim-layer-notice .modal-layer { width: 100%; max-width: 680px; }
+.modal-notice .img-notice { width: 100%; height: 100%; }
+.close-option { display: flex; justify-content: space-between; align-items: center; height: 28px; padding: 0 8px; box-sizing: border-box; background: #f8f8f8; }
+.close-option .option-conts { font-size: 10px; font-weight: 400; color: #999; }
+
+
+/*누적 후원 씨앗 모달창*/
+.dim-layer-seed .modal-layer { height: 300px; padding: 30px 16px 20px; box-sizing: border-box; }
+.modal-seed .tit-seed { margin-bottom: 12px; font-size: 14px; font-weight: 700; color: #000; text-align: center; }
+.modal-seed .seed-state { margin-bottom: 9px; font-size: 14px; font-weight: 700; color: #f76841; text-align: center; }
+.modal-seed .seed-state img { width: 16px; margin-right: 7px; }
+.modal-seed .seed-notice { margin-bottom: 7px;  font-size: 12px; font-weight: 400; color: 3000; text-align: center; line-height: 16px; }
+.list-sponsor { height: 150px; overflow-y: auto; }
+.list-sponsor li { display: flex; align-items: center; height: 30px; padding: 0 12px; border-bottom: 1px solid #ddd; box-sizing: border-box; }
+.list-sponsor .tit-sponsor { width: 15%; font-size: 12px; font-weight: 400; color: #000; }
+.list-sponsor .sponsor-date { width: 35%; font-size: 12px; font-weight: 400; color: #000; }
+.list-sponsor .sponsor-date.today { color: #999; }
+.list-sponsor .sponsor-seed { width: 50%; font-size: 12px; font-weight: 700; color: #f76841; text-align: right; }
+
+
+/*관리자 신청 모달창*/
+.dim-layer-adm .modal-layer { height: 300px; padding: 30px 16px 24px; box-sizing: border-box; }
+.modal-adm .tit-seed { margin-bottom: 12px; font-size: 14px; font-weight: 700; color: #000; text-align: center; }
+.modal-adm .frm-adm { margin-bottom: 30px; }
+.modal-adm .frm-group-phone { height: 38px; }
+.modal-adm .frm-group-phone span { color: #999; }
+.modal-adm .inp-frm { height: 38px; }
+
+
+/*사진 뷰어 모달창*/
+.dim-layer-gallery .dim-bg { left: 0; right: 0; max-width: 680px; margin: 0 auto; opacity: 1; filter: alpha(opacity=100); }
+.dim-layer-gallery .modal-layer { width: 100%; max-width: 680px; height: 100%; background: none; }
+.dim-layer-gallery .slide-gallery { height: 100%; }
+.dim-layer-gallery .swiper-container-autoheight,
+.dim-layer-gallery .swiper-container-autoheight .swiper-slide { height: 100%; }
+.dim-layer-gallery .img-gallery { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1); -webkit-transform: translate(-50%, -50%) scale(1); -moz-transform: translate(-50%, -50%) scale(1); -ms-transform: translate(-50%, -50%) scale(1); -o-transform: translate(-50%, -50%) scale(1); width: 100%; }
+
+.dim-layer-gallery .hd-viewer { display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; width: 100%; max-width: 680px; height: 52px; padding: 0 16px; box-sizing: border-box; margin: 0 auto; }
+.dim-layer-gallery .hd-viewer .hd-l { display: flex; align-items: center; }
+.dim-layer-gallery .hd-viewer .hd-r { display: flex; align-items: center; }
+.dim-layer-gallery .hd-viewer .modal-gallery-close { width: 24px; height: 24px; margin-right: 8px; border: none; background: url('../img/btn_x2.png') center center no-repeat; background-size: 24px; }
+.dim-layer-gallery .hd-viewer .swiper-pagination { position: static; font-size: 14px; font-weight: 700; color: #fff; text-align: left; }
+.dim-layer-gallery .hd-viewer .hd-ico { width: 24px; height: 24px; margin-left: 12px; border: none; background: center center no-repeat; background-size: contain; }
+.dim-layer-gallery .hd-viewer .hd-ico-share { background-image: url('../img/ico_share2.png'); }
+.dim-layer-gallery .hd-viewer .hd-ico-detail { background-image: url('../img/ico_detail2.png'); }
+
+.photo-info { display: flex; justify-content: space-between; align-items: center; position: absolute; left: 0; right: 0; bottom: 0; z-index: 100; width: 100%; max-width: 680px; padding: 12px 16px; box-sizing: border-box; }
+.photo-info .upload-info { display: flex; align-items: center; }
+.photo-info .img-profile { width: 32px; height: 32px; margin-right: 8px; border: 1px solid #f8f8f8; border-radius: 50%; box-sizing: border-box; }
+.photo-info .uploader-name { margin-bottom: 1px; font-size: 12px; font-weight: 700; color: #fff; }
+.photo-info .upload-datetime { font-size: 10px; font-weight: 400; color: #ccc; }
+.photo-info .btn-view { display: block; width: 80px; height: 24px; line-height: 22px; border: 1px solid #fff; box-sizing: border-box; background: none; font-size: 12px; font-weight: 400; color: #fff; text-align: center; }
+
+
+/*유저 프로필 모달창*/
+.modal-profile { padding: 14px 0 12px; box-sizing: border-box; }
+.modal-profile .user-profile { margin-bottom: 25px; text-align: center; }
+.modal-profile .user-profile .img-profile { width: 60px; height: 60px; margin-bottom: 9px; }
+.modal-profile .user-profile .user-name { font-size: 14px; font-weight: 700; color: #000; }
+.modal-profile .profile-menu { display: flex; justify-content: space-between; align-items: center; padding: 0 8px; box-sizing: border-box; }
+.modal-profile .profile-menu li { cursor: pointer; }
+.modal-profile .profile-menu .ico-menu { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 40px; height: 40px; margin-bottom: 2px; border-radius: 50%; box-sizing: border-box; background: #f8f8f8; }
+.modal-profile .profile-menu .ico-menu img { width: 28px; }
+.modal-profile .profile-menu .menu-name { font-size: 10px; font-weight: 400; color: #000; text-align: center; }
+.modal-profile .profile-menu li.inactive .ico-menu img { opacity: 0.2; }
+.modal-profile .profile-menu li.inactive .menu-name { color: #ccc; }
+.modal-profile .line { width: 100%; height: 1px; margin: 17px 0; background: #ddd; }
+.modal-profile .profile-detail li { display: flex; align-items: center; margin-bottom: 12px; }
+.modal-profile .profile-detail li:last-child { margin-bottom: 0; }
+.modal-profile .profile-detail .ico-detail { margin-right: 16px; }
+.modal-profile .profile-detail .ico-detail img { width: 24px; }
+.modal-profile .profile-detail .detail-conts { font-size: 12px; font-weight: 400; color: #000; }
+
+
+/*button style*/
+.btn { display: block; width: 100%; height: 52px; margin: 0 auto; border: none; background: #000; font-size: 14px; font-weight: 700; color: #fff; }
+.btn-inactive,
+.btn:disabled { background: #ccc; }
+
+.btns { display: flex; justify-content: center; }
+.btns .btn { width: 66px; height: 30px; margin: 0 12px; font-size: 12px; }
