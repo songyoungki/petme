@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css?ver=a1">
+<link rel="stylesheet" href="../resources/css/reserve.css?<?=time()?>">
+
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common.js"></script>
+
+<!-- 스와이퍼 4.5.1 -->
+<link rel="stylesheet" href="../resources/css/swiper.min.css">
+<script src="../resources/js/swiper.min.js"></script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+	<!-- 예약완료 상단 -->
+	<header class="reserve_header">
+        <div class="reserve_header_inner">
+			<span class="t2">예약완료</span>
+			<span class="t3"><a href="../reserve/reserve.html"><img src="../images/common/icon_close2.png"></a></span>
+        </div>
+    </header>
+	<!-- //예약완료 상단 -->
+
+	<!-- 예약완료 정보 -->
+	<section class="done_section_info">
+		<img src="../images/common/icon_done.png" alt="">
+		<p>예약이 완료되었습니다.</p>
+	</section>
+	<!-- //예약완료 정보 -->
+
+	<!-- 예약완료 리스트 -->
+	<section class="done_section_list">
+		<div class="inner">
+			<ul class="done_list">
+				<li>
+					<div><span class="t1">날짜</span></div>
+					<div><span class="t2">2022년 2월11일(화) 09:30</span></div>
+				</li>
+				<li>
+					<div><span class="t1">매장</span></div>
+					<div><span class="t2">그루밍살롱 애견미용실</span></div>
+				</li>
+				<li>
+					<div><span class="t1">담당자</span></div>
+					<div><span class="t2">홍길동</span></div>
+				</li>
+				<li>
+					<div><span class="t1">반려동물</span></div>
+					<div class="reserve_animals">
+						<figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+						<span class="t2">초롱이 2.5kg</span>
+					</div>
+				</li>
+				<li>
+					<div><span class="t1">서비스</span></div>
+					<div><span class="t2">반려견미용 / 가위컷</span></div>
+				</li>
+				<li class="option">
+					<div><span class="t1">옵션</span></div>
+					<div>
+						<dl>
+							<dt>품종</dt>
+							<dd>소형견</dd>
+							<dt>몸무게</dt>
+							<dd>3.00이상 ~ 5.00kg미만</dd>
+							<dt>털길이</dt>
+							<dd>5mm</dd>
+							<dt>다리 스타일</dt>
+							<dd>부츠</dd>
+							<dt>몸통 스타일</dt>
+							<dd>풀코트 4cm이상</dd>
+						</dl>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!-- //예약완료 리스트 -->
+
+	<div class="toolbar_padding"><span class="blind">하단툴바 간격</span></div>
+
+	<!-- 예약 툴바 -->
+	<section class="reserve_toolbar">
+		<div class="inner">
+			<div class="btn_wrap">
+				<!-- 버튼 비활성화 disabled 클래스 추가 -->
+				<button type="button" class="btn_outline_50">예약확인</button>
+				<button type="button" class="btn_point_50">홈으로</button>
+			</div>
+		</div>
+	</section>
+	<!-- //예약 툴바 -->
+
+
+</div>
+</body>
+</html>

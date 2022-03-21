@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css?ver=a1">
+<link rel="stylesheet" href="../resources/css/reserve.css?<?=time()?>">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common.js"></script>
+
+<!-- 스와이퍼 4.5.1 -->
+<link rel="stylesheet" href="../resources/css/swiper.min.css">
+<script src="../resources/js/swiper.min.js"></script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+	<!-- 결제하기 상단 -->
+	<header class="reserve_header">
+        <div class="reserve_header_inner">
+            <span class="t1"><a href="#"><img src="../images/shop/arrow__48_b.png"></a></span>
+			<span class="t2">결제하기</span>
+			<span class="t3"><a href="../main/index.html"><img src="../images/shop/icon_home_b.png"></a></span>
+        </div>
+    </header>
+	<!-- //결제하기 상단 -->
+
+	<!-- 프로필 정보 -->
+	<section class="payment_info">
+		<div class="inner">
+			<ul>
+				<li>
+					<p class="title">예약자 이름</p>
+					<fieldset>
+						<input type="text" id="input_name" name="name" value="김말순" title="이름" placeholder="이름(실명)을 입력해 주세요" class="login_input" style="text-indent: 0px;" onkeyup="lo_check();">						 
+					</fieldset>
+				</li>
+				<li>
+					<p class="title">휴대폰번호 (-제외)</p>
+					<fieldset>
+						<input type="text" id="input_phone" name="phone" value="01012345678" title="휴대폰번호" placeholder="번호를 입력해 주세요" class="login_input" style="text-indent: 0px;" onkeyup="lo_check();" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+						<i class="fa-times4">변경</i>
+
+						<i class="fa-times4" style="display:none; cursor:pointer;" onclick="phone_check()">인증번호 전송</i>
+
+						<input type="text" id="input_phone2" name="phone2" value="" title="휴대폰번호 인증" placeholder="인증번호를 입력해 주세요" class="login_input" style="text-indent: 0px; display:none;" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+						<i class="fa-times5" style="display:none; " onclick="#">4 :55</i>
+					</fieldset>
+				</li>
+				<li>
+					<input type="checkbox" name="checker" id="checker2" value="1" onclick="click_check();"> <label for="checker2">내 프로필 정보로 저장</label>
+					<textarea rows="9" name="bbcCntn" id="bbcCntn" title="내용 입력" placeholder="요청사항을 입력해주세요."></textarea>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!-- //프로필 정보 -->
+
+	<!-- 예약 정보/결제정보 -->
+	<section class="payment_info2">
+		<div class="inner">
+			<h3>예약정보</h3>
+			<div class="reserve_info">
+				<figure>
+					<img src="../images/main/img_premium_02.png" alt="">
+				</figure>
+				<p>그루밍살롱 애견미용실</p>
+			</div>
+
+			<!-- 예약1 -->
+			<h4>[예약 1]</h4>
+			<ul class="payment_list2">
+				<li>
+					<span class="t1">날짜</span>
+					<span class="t2">
+						2022년 2월11일 09:30
+					</span>
+					<span class="t2">
+						홍길동
+					</span>
+				</li>
+				<li class="list_type2">
+					<span class="t1">반려동물</span>
+					<div class="reserve_animals">
+						<figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+						<span class="t2">초롱이 2.5kg</span>
+					</div>
+				</li>
+			</ul>
+
+			<h3>결제정보</h3>
+			<div class="payment_list3">
+				<div>
+					<span class="t1">반려견 미용 / 가위컷</span>
+					<span class="t2 bold">70,000원</span>
+				</div>
+				<!-- 반려견 내용 더보기 -->
+				<a href="#none" class="btn_detail"><span class="blind">더보기</span></a>
+				<ul class="detail_con">
+					<li>
+						<div><span class="t1">품종</span> <span  class="t3">(소형견)</span></div>
+						<div><span class="t2">+ 20,000원</span></div>
+					</li>
+					<li>
+						<div><span class="t1">몸무게</span> <span  class="t3">(3.00이상 ~ 5.00kg미만)</span></div>
+						<div><span class="t2">+ 30,000원</span></div>
+					</li>
+					<li>
+						<div><span class="t1">털길이</span> <span  class="t3">(5mm)</span></div>
+						<div><span class="t2">+ 10,000원</span></div>
+					</li>
+					<li>
+						<div><span class="t1">다리 스타일</span> <span  class="t3">(부츠)</span></div>
+						<div><span class="t2">+ 15,000원</span></div>
+					</li>
+					<li>
+						<div><span class="t1">몸통 스타일</span> <span  class="t3">(풀코트 4cm이상)</span></div>
+						<div><span class="t2">+ 10,000원</span></div>
+					</li>
+					<li>
+						<div><span class="t1">담당자</span> <span  class="t3">(홍길동)</span></div>
+						<div><span class="t2">+ 30,000원</span></div>
+					</li>
+				</ul>
+				<!-- //반려견 내용 더보기 -->
+			</div>
+			<!-- //예약1 -->
+
+
+			<!-- 예약2 -->
+			<h4>[예약 2]</h4>
+			<ul class="payment_list2">
+				<li>
+					<span class="t1">날짜</span>
+					<span class="t2">
+						2022년 2월11일 09:30
+					</span>
+					<span class="t2">
+						홍길동
+					</span>
+				</li>
+				<li class="list_type2">
+					<span class="t1">반려동물</span>
+					<div class="reserve_animals">
+						<figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+						<span class="t2">초롱이 2.5kg</span>
+					</div>
+				</li>
+			</ul>
+
+			<h3>결제정보</h3>
+			<div class="payment_list3">
+				<div>
+					<span class="t1">반려견 미용 / 가위컷</span>
+					<span class="t2 bold">70,000원</span>
+				</div>
+				<!-- 반려견 내용 더보기 -->
+				<a href="#none" class="btn_detail"><span class="blind">더보기</span></a>
+				<ul class="detail_con">
+					<li>
+						<div><span class="t1">품종</span> <span  class="t3">(소형견)</span></div>
+						<div><span class="t2">+ 20,000원</span></div>
+					</li>
+					<li>
+						<div><span class="t1">몸무게</span> <span  class="t3">(3.00이상 ~ 5.00kg미만)</span></div>
+						<div><span class="t2">+ 30,000원</span></div>
+					</li>
+					<li>
+						<div><span class="t1">털길이</span> <span  class="t3">(5mm)</span></div>
+						<div><span class="t2">+ 10,000원</span></div>
+					</li>
+					<li>
+						<div><span class="t1">다리 스타일</span> <span  class="t3">(부츠)</span></div>
+						<div><span class="t2">+ 15,000원</span></div>
+					</li>
+					<li>
+						<div><span class="t1">몸통 스타일</span> <span  class="t3">(풀코트 4cm이상)</span></div>
+						<div><span class="t2">+ 10,000원</span></div>
+					</li>
+					<li>
+						<div><span class="t1">담당자</span> <span  class="t3">(홍길동)</span></div>
+						<div><span class="t2">+ 30,000원</span></div>
+					</li>
+				</ul>
+				<!-- //반려견 내용 더보기 -->
+			</div>
+			<!-- //예약2 -->
+
+
+			<!-- 안내사항 -->
+			<div class="payment_notice">
+				<ul>
+					<li>예약일 기준 7일 전까지 취소시 100% 환불</li>
+					<li>예약일 기준 6일 전까지 취소시 90% 환불</li>
+					<li>예약일 기준 5일 전까지 취소시 80% 환불</li>
+					<li>예약일 기준 4일 전까지 취소시 70% 환불</li>
+					<li>예약일 기준 3일 전까지 취소시 60% 환불</li>
+					<li>예약일 기준 2일 전까지 취소시 50% 환불</li>
+					<li>예약일 기준 1일 전까지 취소시 30% 환불</li>
+					<li>예약일 당일 취소 및 미방문시 환불불가</li>
+					<li>내 반려동물의 정보 및 옵션정보가 매장에서의 정보와 다를 경우 결제금액의 차이가 발생할 수 있습니다.</li>
+					<li>내 반려동물이 매장의 서비스를 받을 시 안내사항 및 동의서에 동의하셔야 서비스를 받으실 수 있습니다.</li>
+				</ul>
+			</div>
+			<!-- //안내사항 -->
+		</div>
+	</section>
+	<!-- //예약하기 리스트 -->
+
+	<!-- 동의하기 -->
+	<section class="agree_info">
+		<div class="inner">
+			 <div class="agree1">
+				<p><input type="checkbox" name="checkerall" id="checker_all" value='selectall'> <label for="checker_all">전체 동의하기</p>
+			 </div>
+
+			<div class="agree2">
+				<p><input type="checkbox" name="checker" id="checkbox1" value="1" class="all"> <label for="checkbox1">상기 결제 내역을 확인 및 결제 진행에 동의</p>
+				<p><input type="checkbox" name="checker" id="checkbox2" value="2" class="all"> <label for="checkbox2">취소 및 미방문시 환불수수료를 확인하였으며, 동의</p>
+				<p><input type="checkbox" name="checker" id="checkbox3" value="3" class="all"> <label for="checkbox3">매장 안내사항 및 동의서를 확인하였으며, 동의</p>
+				<a href="#cate_pop1" class="btn_agree">안내사항 및 동의서 보기</a>
+			</div>
+		</div>
+	</section>
+	<!-- //동의하기 -->
+	
+
+	<!-- [D] 안내사항 및 동의서 보기 토스트배너 -->
+    <div id="cate_pop1" class="agree_view_box">
+        <div class="dim_bg"></div>
+        <div class="agree_content">
+            <a href="#" class="btn_close"><span class="blind">닫기</span></a>
+            <p>안내사항 및 동의서</p>
+
+			<div class="agree_content_wrap">
+				<div class="agree_tab">
+					<ul>
+						<li data-id="agree_con1" class="on">이중모 클리핑 미용동의서</li>
+						<li data-id="agree_con2">무는개 미용동의서</li>
+						<li data-id="agree_con3">노령견 미용동의서</li>
+					</ul>
+				</div>
+				
+				<!-- 안내사항 : 내용1 -->
+				<div id="agree_con1" class="content on">
+					<ul>
+					  <li>그루밍 케어를 위해 저희 그루밍 캐나다를 찾아주신 고객님들의 반려견 미용함에 있어 최선을 다 할 것을 약속드립니다.</li>
+					  <li>반려견 미용시 예측하기 어려운 움직임이 있어 클리핑이나 시저링 같은 날카로운 도구로 미용하거나 갑작스러운 돌발상황 발생으로 반려견이 상해를 입는 상황이 발생       할 수 있고, 상해발생시 그루밍 캐나다 협력 병원에서 
+					       치료해 드립니다.</li>
+					  <li>임의로 타 병원을 이용하실시 병원비 지급은 하지 않으며, 반려견의 병력사항이나 특수상황(예민하거나, 입질이 있는 개)등 미고지 후 사고 발생 시 해당 견주는 그루     밍 캐나다에 그 어떤 책임을 묻지 않겠습니다.</li>
+					  <li>또한 미용도중 반려견으로 인한 상해시(입질,물림) 병원비가 청구됩니다.</li>
+					  <li>이를 설명받았고 숙지하고 동의하에 서명합니다.</li>
+				</div>
+				<!-- //안내사항 : 내용1 -->
+
+				<!-- 안내사항 : 내용2 -->
+				<div id="agree_con2" class="content">
+					2222번재 안내사항<br>
+					내용 추가
+				</div>
+				<!-- //안내사항 : 내용2 -->
+
+				<!-- 안내사항 : 내용3 -->
+				<div id="agree_con3" class="content">
+					33333번재 안내사항<br>
+					내용 추가
+				</div>
+				<!-- //안내사항 : 내용3 -->
+			</div>
+
+        </div>
+    </div>
+	<!-- //[D] 안내사항 및 동의서 보기 토스트배너 -->
+
+	<div class="toolbar_padding"><span class="blind">하단툴바 간격</span></div>
+	
+	<!-- 예약 툴바 -->
+	<section class="reserve_toolbar">
+		<div class="inner">
+			<div class="total_pay">
+				<div><span class="t1">총 결제금액</span></div>
+				<div><span class="t2">140,000원</span></div>
+			</div>
+			<div class="btn_wrap">
+				<button type="button"  id="TestBtn" class="btn_point">결제하기</button>
+			</div>
+		</div>
+	</section>
+	<!-- //예약 툴바 -->
+
+	<script>
+	// 반려견 미용/가위컷 상세정보 나타나기
+	$('.payment_info2 .btn_detail').on('click',function(e) {
+		e.preventDefault();
+		if ($(this).parent().hasClass('on')) {
+			$(this).parent().removeClass('on').find('.detail_con').slideUp(300);
+		} else {
+			$(this).parent().addClass('on').find('.detail_con').slideDown(300);
+		}
+	});
+
+	// 안내사항 및 동의서 보기 토스트배너
+	$('.btn_agree').on('click', function() {
+		$(".agree_view_box .btn_close").show();
+		$(".agree_view_box" + $(this).attr("href")).fadeIn(200);
+		$(".agree_view_box").find('.agree_content').animate({bottom:0}, 200);
+		$("body").css({'height':$(window).height(), 'overflow':'hidden'});
+	});
+	$('.agree_view_box .btn_close').on('click', function(e) {
+		e.preventDefault();
+		$(".btn_agree").show();
+		$(".agree_view_box").fadeOut(300);
+		$(".agree_view_box").find('.agree_content').animate({bottom:-150}, 300);
+		$("body").css({'height':'auto', 'overflow':'auto'});
+	});
+
+	// 안내사항 및 동의서 보기 탭메뉴
+	$(".agree_content_wrap .agree_tab li").click(function() {
+		$(".agree_content_wrap .agree_tab li").removeClass('on');
+		$(".agree_content_wrap .content").removeClass('on');
+		$(this).addClass('on');
+		$("#" + $(this).data('id')).addClass('on');
+	});
+
+	//동의하기
+	$('#checker_all').change(function () { 
+		var checked = $(this).prop('checked'); 
+		$('.all').prop('checked', checked); 
+	});
+
+	$('.all').change(function () { 
+		var tmpLength = $('.all').length; 
+		var checkedLength = $('.all:checked').length; 
+		var selectAll = (tmpLength == checkedLength); 
+		$('#checker_all').prop('checked', selectAll); selectAll ? 
+		$('#TestBtn').removeAttr('disabled'):$('#TestBtn').attr('disabled','disabled'); 
+	});
+
+	$('#checker_all').change(function () { 
+		$(this).prop('checked') ? $('#TestBtn').removeAttr('disabled'):$('#TestBtn').attr('disabled','disabled'); 
+	});
+
+	</script>
+
+
+</div>
+</body>
+</html>

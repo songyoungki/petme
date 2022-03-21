@@ -1,0 +1,161 @@
+<?php
+function rock_date_juljul($s_date, $e_date)
+{
+    $s_strtotime = mktime(0, 0, 0, substr($s_date, 4, 2), substr($s_date, 6, 2), substr($s_date, 0, 4));
+    $e_strtotime = mktime(0, 0, 0, substr($e_date, 4, 2), substr($e_date, 6, 2), substr($e_date, 0, 4));
+
+    for($i = 0; $i <= ($e_strtotime-$s_strtotime) / (3600 * 24); $i++)
+    {
+        $print_array = $s_strtotime + (3600 * 24 * $i);
+        $return_date_arr[$i] = date("Ymd", $print_array);
+    }
+    return $return_date_arr;
+}
+function rock_yoil($date)
+{
+    $week = array("일", "월", "화", "수", "목", "금", "토");
+    return $week[date("w", mktime(0, 0, 0, substr($date, 4, 2), substr($date, 6, 2), substr($date, 0, 4)))];
+}
+
+$get = array();
+$get['year'] = isset($_POST['year']) ? $_POST['year'] : date("Y");
+$get['month'] = isset($_POST['month']) ? $_POST['month'] : date("m");
+$get['sdate'] = isset($_POST['sdate']) ? (int)$_POST['sdate'] : "";
+$get['edate'] = isset($_POST['edate']) ? (int)$_POST['edate'] : "";
+$get['click_date'] = isset($_POST['click_date']) ? (int)$_POST['click_date'] : "";
+
+if($get['year'].$get['month'] < date("Ym"))
+{
+    $get['year'] = date("Y");
+    $get['month'] = date("m");
+}
+
+$sdate = "";
+$edate = "";
+
+if(!empty($get['sdate']) && !empty($get['edate']) && !empty($get['click_date']))
+{
+    $sdate = $get['click_date'];
+    $edate = "";
+}
+elseif(!empty($get['sdate']) && !empty($get['edate']) && empty($get['click_date']))
+{
+    $sdate = $get['sdate'];
+    $edate = $get['edate'];
+}
+elseif(!empty($get['sdate']) && empty($get['edate']) && empty($get['click_date']))
+{
+    $sdate = $get['sdate'];
+    $edate = "";
+}
+elseif(!empty($get['sdate']) && empty($get['edate']) && !empty($get['click_date']))
+{
+    if($get['sdate'] > $get['click_date'])
+    {
+        $sdate = $get['click_date'];
+        $edate = "";
+    }
+    else
+    {
+        $sdate = $get['sdate'];
+        $edate = $get['click_date'];
+    }
+}
+elseif(empty($get['sdate']) && empty($get['edate']) && !empty($get['click_date']))
+{
+    $sdate = $get['click_date'];
+    $edate = "";
+}
+else
+{
+    $sdate = "";
+    $edate = "";
+}
+
+
+$date_input = "";
+$date_arr = array();
+
+if(!empty($sdate) && !empty($edate))
+{
+    $date_input = intval(substr($sdate, 4, 2)).".".intval(substr($sdate, 6, 2))." (".rock_yoil($sdate).") ~ ".intval(substr($edate, 4, 2)).".".intval(substr($edate, 6, 2))." (".rock_yoil($edate).")";
+    $date_arr = rock_date_juljul($sdate, $edate);
+}
+elseif(!empty($sdate) && empty($edate))
+{
+    $date_input = intval(substr($sdate, 4, 2)).".".intval(substr($sdate, 6, 2))." (".rock_yoil($sdate).")";
+}
+
+$cal = array();
+$cal['time'] = strtotime($get['year']."-".$get['month']."-01");
+list($cal['tday'], $cal['sweek']) = explode("-", date("t-w", $cal['time']));  // 총 일수, 시작요일
+$cal['tweek'] = ceil(($cal['tday'] + $cal['sweek']) / 7);  // 총 주차
+$cal['lweek'] = date("w", strtotime($get['year']."-".$get['month']."-".$cal['tday']));  // 마지막요일
+$cal['prevyear'] = date("Y", mktime(0, 0, 0, $get['month'] - 1, 1, $get['year']));
+$cal['nextyear'] = date("Y", mktime(0, 0, 0, $get['month'] + 1, 1, $get['year']));
+$cal['prevmonth'] = date("m", mktime(0, 0, 0, $get['month'] - 1, 1, $get['year']));
+$cal['nextmonth'] = date("m", mktime(0, 0, 0, $get['month'] + 1, 1, $get['year']));
+?>
+<?php if(isset($_POST['year'])):?><?=$get['year']?>|^|<?=$get['month']?>|^|<?=$sdate?>|^|<?=$edate?>|^|<?=$date_input?>|^|<?php endif?><div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;">
+    <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+        <a class="ui-datepicker-prev ui-corner-all" onclick="cal_ajax('<?=$cal['prevyear']?>', '<?=$cal['prevmonth']?>', '');" title="이전 달"><span class="ui-icon ui-icon-circle-triangle-w">이전 달</span></a>
+        <a class="ui-datepicker-next ui-corner-all" onclick="cal_ajax('<?=$cal['nextyear']?>', '<?=$cal['nextmonth']?>', '');" title="다음 달"><span class="ui-icon ui-icon-circle-triangle-e">다음 달</span></a>
+        <div class="ui-datepicker-title">
+            <span class="ui-datepicker-year"><?=$get['year']?></span>.&nbsp;<span class="ui-datepicker-month"><?=$get['month']?></span>
+        </div>
+    </div>
+
+    <table class="ui-datepicker-calendar">
+    <thead>
+    <tr>
+        <th scope="col" class="ui-datepicker-week-end">
+            <span title="일">일</span>
+        </th>
+        <th scope="col">
+            <span title="월">월</span>
+        </th>
+        <th scope="col">
+            <span title="화">화</span>
+        </th>
+        <th scope="col">
+            <span title="수">수</span>
+        </th>
+        <th scope="col">
+            <span title="목">목</span>
+        </th>
+        <th scope="col">
+            <span title="금">금</span>
+        </th>
+        <th scope="col" class="ui-datepicker-week-end">
+            <span title="토">토</span>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php for($n = 1, $i = 0; $i < $cal['tweek']; $i++):?>
+    <tr>
+        <?php for($k = 0; $k < 7; $k++):?>
+        <?php if(!(($i == 0 && $k < $cal['sweek']) || ($i == $cal['tweek'] - 1 && $k > $cal['lweek']))):?>
+            <?php
+            $day = $n++;
+            $j = ($day < 10) ? "0".$day : $day;
+            $date8 = $get['year'].$get['month'].$j;
+            ?>
+            <?php if($date8 >= date("Ymd")):?>
+            <td class="<?php if($date8 == date("Ymd")):?>ui-state-default ui-state-highlight <?php endif?><?php if($sdate == $date8):?>ui-state-active <?php elseif($edate == $date8):?>ui-state-end <?php elseif(in_array($date8, $date_arr)):?>ui-state-mid <?php endif?><?php if($k == 0 || $k == 6):?>ui-datepicker-week-end <?php endif?>">
+                <a class="ui-state-default" href="javascript:void(0);" onclick="cal_ajax('<?=$get['year']?>', '<?=$get['month']?>', '<?=$date8?>');"><?=$day?></a>
+            </td>
+            <?php else:?>
+            <td class="ui-datepicker-unselectable ui-state-disabled<?php if($k == 0 || $k == 6):?> ui-datepicker-week-end<?php endif?>">
+                <span class="ui-state-default"><?=$day?></span>
+            </td>
+            <?php endif?>
+        <?php else:?>
+        <td class="ui-datepicker-other-month<?php if($k == 0 || $k == 6):?> ui-datepicker-week-end<?php endif?>">&nbsp;</td>
+        <?php endif?>
+        <?php endfor?>
+    </tr>
+    <?php endfor?>
+    </tbody>
+    </table>
+</div>

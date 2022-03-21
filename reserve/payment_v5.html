@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css?ver=a1">
+<link rel="stylesheet" href="../resources/css/reserve.css?<?=time()?>">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common_reserve.js?ver=a1"></script>
+
+<!-- 스와이퍼 4.5.1 -->
+<link rel="stylesheet" href="../resources/css/swiper.min.css">
+<script src="../resources/js/swiper.min.js"></script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+	<!-- 결제하기 상단 -->
+	<header class="reserve_header">
+        <div class="reserve_header_inner">
+            <span class="t1"><a href="#"><img src="../images/shop/arrow__48_b.png"></a></span>
+			<span class="t2">결제하기</span>
+			<span class="t3"><a href="../main/index.html"><img src="../images/shop/icon_home_b.png"></a></span>
+        </div>
+    </header>
+	<!-- //결제하기 상단 -->
+
+	<!-- 프로필 정보 -->
+	<section class="payment_info">
+		<div class="inner">
+			<ul>
+				<li>
+					<p class="title">예약자 이름</p>
+					<fieldset>
+						<input type="text" id="input_name" name="name" value="김말순" title="이름" placeholder="이름(실명)을 입력해 주세요" class="login_input" style="text-indent: 0px;" onkeyup="lo_check();">						 
+					</fieldset>
+				</li>
+				<li>
+					<p class="title" >휴대폰번호 (-제외)</p>
+					<fieldset>
+						<input type="text" id="input_phone" name="phone" value="" title="휴대폰번호" placeholder="번호를 입력해 주세요" class="login_input" style="text-indent: 0px;" onkeyup="lo_check();" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+						<i class="fa-times3">인증번호 전송</i>
+
+						<i class="fa-times4" style="display:none; cursor:pointer;" onclick="phone_check()">인증번호 전송</i>
+                        
+						
+					</fieldset>
+
+					<p class="title" id="fa-times4" style="display:none;">인증번호 입력</p>
+					   <fieldset>
+						<input type="text" id="input_phone2" name="phone2" value="" title="휴대폰번호 인증" placeholder="인증번호를 입력해 주세요" class="login_input" style="text-indent: 0px; display:none;" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+						<i class="fa-times5" style="display:none; " onclick="#">4 :55</i>
+						</fieldset>
+				</li>
+				<li>
+					<input type="checkbox" name="checker" id="checker2" value="1" onclick="click_check();"> <label for="checker2">내 프로필 정보로 저장</label>
+					<textarea rows="9" name="bbcCntn" id="bbcCntn" title="내용 입력" placeholder="요청사항을 입력해주세요."></textarea>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!-- //프로필 정보 -->
+
+	<!-- 예약 정보/결제정보 -->
+	<section class="payment_info2">
+		<div class="inner">
+			<h3>예약정보</h3>
+			<div class="reserve_info">
+				<figure>
+					<img src="../images/main/img_premium_02.png" alt="">
+				</figure>
+				<p>그루밍살롱 애견미용실</p>
+			</div>
+
+			
+		</div>
+	</section>
+	<!-- //예약하기 리스트 -->
+
+
+	
+
+	
+
+	
+
+	<script>
+	// 반려견 미용/가위컷 상세정보 나타나기
+	$('.payment_info2 .btn_detail').on('click',function(e) {
+		e.preventDefault();
+		if ($(this).parent().hasClass('on')) {
+			$(this).parent().removeClass('on').find('.detail_con').slideUp(300);
+		} else {
+			$(this).parent().addClass('on').find('.detail_con').slideDown(300);
+		}
+	});
+
+	// 안내사항 및 동의서 보기 토스트배너
+	$('.btn_agree').on('click', function() {
+		$(".agree_view_box .btn_close").show();
+		$(".agree_view_box" + $(this).attr("href")).fadeIn(200);
+		$(".agree_view_box").find('.agree_content').animate({bottom:0}, 200);
+		$("body").css({'height':$(window).height(), 'overflow':'hidden'});
+	});
+	$('.agree_view_box .btn_close').on('click', function(e) {
+		e.preventDefault();
+		$(".btn_agree").show();
+		$(".agree_view_box").fadeOut(300);
+		$(".agree_view_box").find('.agree_content').animate({bottom:-150}, 300);
+		$("body").css({'height':'auto', 'overflow':'auto'});
+	});
+
+	// 안내사항 및 동의서 보기 탭메뉴
+	$(".agree_content_wrap .agree_tab li").click(function() {
+		$(".agree_content_wrap .agree_tab li").removeClass('on');
+		$(".agree_content_wrap .content").removeClass('on');
+		$(this).addClass('on');
+		$("#" + $(this).data('id')).addClass('on');
+	});
+
+	//동의하기
+	$('#checker_all').change(function () { 
+		var checked = $(this).prop('checked'); 
+		$('.all').prop('checked', checked); 
+	});
+
+	$('.all').change(function () { 
+		var tmpLength = $('.all').length; 
+		var checkedLength = $('.all:checked').length; 
+		var selectAll = (tmpLength == checkedLength); 
+		$('#checker_all').prop('checked', selectAll); selectAll ? 
+		$('#TestBtn').removeAttr('disabled'):$('#TestBtn').attr('disabled','disabled'); 
+	});
+
+	$('#checker_all').change(function () { 
+		$(this).prop('checked') ? $('#TestBtn').removeAttr('disabled'):$('#TestBtn').attr('disabled','disabled'); 
+	});
+
+	</script>
+
+
+</div>
+</body>
+</html>
