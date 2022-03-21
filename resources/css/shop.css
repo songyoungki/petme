@@ -1646,7 +1646,7 @@ position: absolute;
 .detail_product_d_local .inner .text_wrap p {font-size:14px; color:#1a1a1a; line-height:20px; padding:24px 0px;}
 
 .detail_product_d_local .inner .text_wrap_no {margin: 0 0 0 0;  padding: 0 0 24px 0;}
-.detail_product_d_local .inner .text_wrap_no p {font-size:14px; color:#1a1a1a; line-height:20px; padding:24px 0px;}
+.detail_product_d_local .inner .text_wrap_no p {font-size:14px; color:#1a1a1a; line-height:20px; padding:24px 0px;     margin-left: 12px;} 
 
 .product_d {	}
 
