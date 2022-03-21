@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css?<?=time()?>">
+<link rel="stylesheet" href="../resources/css/shop.css?<?=time()?>">
+<link rel="stylesheet" href="../resources/css/mobiscroll.jquery.min.css">
+
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common_shop.js?ver=b1"></script>
+
+<!-- 스와이퍼 4.5.1 -->
+<link rel="stylesheet" href="../resources/css/swiper.min.css">
+<script src="../resources/js/swiper.min.js"></script>
+<script src="../resources/js/mobiscroll.jquery.min.js"></script>
+<style>
+input[type=checkbox] {
+    display:none;
+}
+
+#checker2 + label {
+    cursor: pointer;
+    padding-left: 24px;
+    background-repeat: no-repeat;
+    background-image: url('../images/shop/review_check_off.png');
+    background-size: 18px;
+    color: #1a1a1a;
+    font-weight: 400;
+    font-size: 14px;
+    padding-top: 1px;
+
+}
+#checker2:checked + label {
+    background-image: url('../images/shop/review_check_on.png');
+}
+</style>
+
+<script>
+function lo_check()
+{
+    
+
+    if($('#input_name').val() != "" )
+    {
+        $('#TestBtn').addClass('btn_confirm');
+        $('#TestBtn').removeClass('btn_confirm_off');
+        $('#TestBtn').removeAttr('disabled');
+    }
+    else
+    {
+        $('#TestBtn').addClass('btn_confirm_off');
+        $('#TestBtn').removeClass('btn_confirm');
+        $('#TestBtn').attr('disabled', 'disabled');
+    }
+}
+</script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+    <!-- 상단 -->
+
+
+<!-- 내주변 매장 포트폴리오 -->
+       <section class="shop_section_reg">
+	    	<div class="detail_stick2">
+	                    <div class="detail_stick2_inner">
+		                  
+                    		<span class="t2">반려동물 등록</span>
+                    		<span class="t3"><img  src="../images/shop/icon_x_48_b.png"></span>
+				        </div>
+          </div>
+		   <div class="panel"></div>
+
+		  <script>
+$(window).scroll(function() {
+    if(($(window).scrollTop() - $('.panel').offset().top > 0) == true)
+    {
+        $('.detail_stick2').show();
+        $('.tab').css('top', '60px');
+		$('.tab').css('box-shadow', '2px 3px 5px 0px #ededed');
+    }
+    else
+    {
+        $('.detail_stick2').hide();
+        $('.tab').css('top', '0px');
+		$('.tab').css('box-shadow', 'none');
+    }
+});
+</script>
+            <div class="">
+                <div class="sect_title">
+
+				 <div class="detail_review">
+	   <div class="detail_review_inner">
+
+		<span class="t2">반려동물 등록</span>
+		<span class="t3"><img  src="../images/shop/icon_x_48_b.png"></span>
+				 </div>
+              </div>
+
+
+       <div class="reg_img">
+	     <img src="../images/shop/reg_non.png">
+	   </div>
+
+	   <div class="reg_area">
+
+		  <div class="reg_name_area">
+		    이름
+		  </div>
+
+		  <div class="reg_input_area">
+		   <input type="text"  id="input_name" value="" title="이름" placeholder="이름을 입력해 주세요" onkeyup="lo_check();">
+		  </div>
+
+	 </div>
+
+	 <div class="reg_area">
+
+		  <div class="reg_name_area">
+		    품종선택
+		  </div>
+
+		  <div class="reg_input_area">
+		    <div class="reg_input_button_l">
+			<input  type="radio" name="animal" id="animal1"  value="" title="이름" >
+			<label for="animal1"><img src="../images/shop/386.png"> 반려견</label>
+			</div>
+
+			<div class="reg_input_button_r">
+			<input  type="radio" name="animal" id="animal2"  value="" title="이름" >
+			<label for="animal2"><img src="../images/shop/388.png"> 반려묘</label>
+			</div>
+
+		  </div>
+
+ 	</div>
+
+
+	<div class="reg_area">
+
+		  <div class="reg_name_area">
+
+		  </div>
+
+		  <div class="reg_input_area">
+		   <input type="text"  value="" onclick="location.href='animal_search.html'" title="품종" placeholder="품종을 검색해 주세요" ><img onclick="location.href='animal_search.html'"class="calander" src="../images/common/icon_search_40.png">
+		  </div>
+
+		  </div>
+
+ 	</div>
+
+
+	<div class="reg_area">
+
+		  <div class="reg_name_area">
+		    생일
+		  </div>
+
+		  <div class="reg_input_area">
+		   <input type="text"  value="" id="input_birth" title="이름" placeholder="생일을 선택해 주세요" class="js-dial-view" onclick="dial_click();" readonly="readonly"><img onclick="dial_click();" class="search" src="../images/common/icon_calander.png">
+		  </div>
+
+		  <div id="inline-picker"></div>
+
+ 	</div>
+
+
+
+		<div class="reg_area">
+
+		  <div class="reg_name_area">
+		    몸무게 (kg)
+		  </div>
+
+		  <div class="reg_input_area2">
+		   <input type="text" id="kg" value="" title="이름" placeholder="0" >
+		   <div class="reg_input_area2_div"><img class="sub_bull" src="../images/common/31.png"></div>
+		   <input type="text" id="kg2"  value="" title="이름" placeholder="00" >
+		  </div>
+
+		</div>
+
+
+
+	<div class="reg_area">
+
+		  <div class="reg_name_area">
+		    성별
+		  </div>
+
+		  <div class="reg_input_area">
+		    <div class="reg_input_button_l">
+			<input  type="radio" name="animal_s" id="animal_s1"  value="" title="이름" >
+			<label for="animal_s1">남아</label>
+			</div>
+
+			<div class="reg_input_button_r">
+			<input  type="radio" name="animal_s" id="animal_s2"  value="" title="이름" >
+			<label for="animal_s2">여아</label>
+			</div>
+
+		  </div>
+
+ 	</div>
+
+
+	<div class="reg_area">
+
+		  <div class="reg_name_area">
+		    중성화
+		  </div>
+
+		  <div class="reg_input_area">
+		    <div class="reg_input_button_l">
+			<input  type="radio" name="animal_c" id="animal_c1"  value="" title="이름" >
+			<label for="animal_c1">완료</label>
+			</div>
+
+			<div class="reg_input_button_r">
+			<input  type="radio" name="animal_c" id="animal_c2"  value="" title="이름" >
+			<label for="animal_c2">안함</label>
+			</div>
+
+		  </div>
+
+ 	</div>
+
+
+
+	<div class="reg_area">
+
+		  <div class="reg_name_area">
+		    특징
+		  </div>
+
+		  <div class="reg_input_area">
+
+			<textarea rows="9" name="feature" id="feature" title="내용 입력" placeholder="반려동물의 특징 및 특이사항을 입력해 주세요"></textarea>
+
+		  </div>
+
+ 	</div>
+
+
+
+	<div class="reg_area">
+                <a href="#" class="btn_reset">초기화</a>
+                <a href="#" disabled="disabled" id="TestBtn"  class="btn_confirm_off">등록</a>
+     </div>
+
+
+
+
+
+
+
+	   </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- //내주변 매장 포트폴리오 -->
+
+
+</div>
+
+<script>
+$('#inline-picker').mobiscroll().datepicker({
+    lang: 'ko',
+    controls: ['date'],
+    dateFormat: 'yy-mm-dd',
+    touchUi: true
+});
+var picker = $('#button-picker').mobiscroll().datepicker({
+    lang: 'ko',
+    controls: ['date'],
+    dateFormat: 'yy-mm-dd',
+    mode: 'mixed',
+    touchUi: true,
+    showOnClick: false,
+    showOnFocus: false
+}).mobiscroll('getInst');
+
+$('#show-picker').click(function () {
+    picker.open();
+    return false;
+});
+
+function dial_click()
+{
+    $(".js-dial").addClass("active");
+}
+function dial_ok()
+{
+	$(".js-dial-view").val($("#sel-year").val()+"년 "+Number($("#sel-month").val())+"월 "+Number($("#sel-day").val())+"일");
+    $(".js-dial").removeClass("active");
+    $("body").css("height", "");
+    $("body").css("overflow", "");
+}
+function dial_cancel()
+{
+    $(".js-dial").removeClass("active");
+    $("body").css("height", "");
+    $("body").css("overflow", "");
+}
+</script>
+
+
+
+<link rel="stylesheet" href="./reg_birth/b_common.css?<?=time()?>">
+<link rel="stylesheet" href="./reg_birth/b_drum.css?<?=time()?>">
+<script src="./reg_birth/b_jquery.easing.1.3.js"></script>
+<script src="./reg_birth/b_drum.js?<?=time()?>"></script>
+<script src="./reg_birth/b_hammer.min.js"></script>
+<script></script>
+
+<!--생년월일 선택 모달창-->
+<div class="dim-layer dim-layer-dial js-dial">
+    <div class="dim-bg"></div>
+    <div id="layer" class="modal-layer">
+        <div class="modal-container">
+			<div class="ck-dial"></div>
+
+			<div class="dial-area">
+				<div class="line-area"></div>
+
+				<select id="sel-year">
+                <?php for($i = (date("Y") - 100); $i <= date("Y"); $i++):?>
+                <option value="<?=$i?>"<?php if($i == date("Y")):?> selected="selected"<?php endif?>><?=$i?>년</option>
+                <?php endfor?>
+				</select>
+
+				<select id="sel-month">
+                <?php for($i = 1; $i <= 12; $i++):?>
+                <?php
+                $j = ($i < 10) ? "0".$i : $i;
+                ?>
+                <option value="<?=$j?>"<?php if($j == date("m")):?> selected="selected"<?php endif?>><?=$i?>월</option>
+                <?php endfor?>
+				</select>
+
+				<select id="sel-day">
+                <?php for($i = 1; $i <= 31; $i++):?>
+                <?php
+                $j = ($i < 10) ? "0".$i : $i;
+                ?>
+                <option value="<?=$j?>"<?php if($j == date("d")):?> selected="selected"<?php endif?>><?=$i?>일</option>
+                <?php endfor?>
+				</select>
+
+				<script>
+				$(".dial-area select").drum();
+				</script>
+			</div>
+
+			<div class="btn_wrap2">
+                        <a href="javascript:void(0);" onclick="dial_cancel();" class="btn_cancle js-dial-hidden">취소</a>
+                        <a href="javascript:void(0);" onclick="dial_ok();" class="btn_confirm js-dial-hidden2">확인</a>
+						<!-- <input type="button" value="취소" class="btn btn-inactive js-dial-hidden">
+										        <input type="button" value="확인" class="btn js-dial-hidden"> -->
+                    </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
