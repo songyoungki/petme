@@ -283,3 +283,112 @@ $(function() {
 		*/
     }
 });
+
+
+
+
+    function phone_check() {
+    	 $('#input_phone2').show();
+		 $('.fa-times5').show();
+		 $('#fa-times4').show();
+    }
+
+
+function lo_check()
+{
+    if($('#input_text').val() == "")
+    {
+        $('.fa-times').show();
+		$('.fa-times2').hide();
+    }
+    else
+    {
+        $('.fa-times2').show();
+		$('.fa-times').hide();
+    }
+
+	if($('#input_phone').val() == "")
+    {
+        $('.fa-times3').show();
+		$('.fa-times4').hide();
+
+    }
+    else
+    {
+        $('.fa-times4').show();
+		$('.fa-times3').hide();
+
+    }
+
+
+
+    if($('#input_pw').val() == "")
+    {
+        $('#pass_i').hide();
+    }
+    else
+    {
+        $('#pass_i').show();
+    }
+
+	if($('#input_pw2').val() == "")
+    {
+        $('#pass_i2').hide();
+    }
+    else
+    {
+        $('#pass_i2').show();
+    }
+
+    if($('#input_text').val() != "" && $('#input_name').val() != "" && $('#input_phone').val() != "" )
+    {
+        $('#TestBtn').addClass('btn_login_on');
+        $('#TestBtn').removeClass('btn_login');
+        $('#TestBtn').removeAttr('disabled');
+    }
+    else
+    {
+        $('#TestBtn').addClass('btn_login');
+        $('#TestBtn').removeClass('btn_login_on');
+        $('#TestBtn').attr('disabled', 'disabled');
+    }
+}
+function click_id()
+{
+    $('#input_text').val('');
+    lo_check();
+}
+function click_pass()
+{
+    if($('#input_pw').attr('type') == "password")
+    {
+        $('#input_pw').attr('type', 'text');
+        $('#pass_i').addClass('fa-eye-slash');
+        $('#pass_i').removeClass('fa-eye');
+    }
+    else
+    {
+        $('#input_pw').attr('type', 'password');
+        $('#pass_i').addClass('fa-eye');
+        $('#pass_i').removeClass('fa-eye-slash');
+    }
+    lo_check();
+}
+
+function click_pass2()
+{
+    if($('#input_pw2').attr('type') == "password")
+    {
+        $('#input_pw2').attr('type', 'text');
+        $('#pass_i2').addClass('fa-eye-slash');
+        $('#pass_i2').removeClass('fa-eye');
+    }
+    else
+    {
+        $('#input_pw2').attr('type', 'password');
+        $('#pass_i2').addClass('fa-eye');
+        $('#pass_i2').removeClass('fa-eye-slash');
+    }
+    lo_check();
+}
+

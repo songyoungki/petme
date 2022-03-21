@@ -161,6 +161,19 @@ $(function() {
         $("body").css({'height':'auto', 'overflow':'auto'});
     });
 
+
+	// 반려동물 상품선택
+    $('.btn_product').on('click',function(e) {
+        e.preventDefault();
+        $('.pop_wrap').addClass('active');
+        $("body").css({'height':$(window).height(), 'overflow':'hidden'});
+    });
+    $('.pop_wrap .btn_confirm').on('click', function(e) {
+        e.preventDefault();
+        $(this).closest('.pop_wrap').removeClass('active');
+        $("body").css({'height':'auto', 'overflow':'auto'});
+    });
+
     // 내주변 - 카테고리 클릭시 토스트배너 출력
     $('.btn_cate').on('click', function() {
         $(".category_box .btn_close").show();
