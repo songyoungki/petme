@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css?ver=a2">
+<link rel="stylesheet" href="../resources/css/layout.css?ver=b6">
+<link rel="stylesheet" href="../resources/css/reserve.css?<?=time()?>"> <!-- 예약 css추가 -->
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common.js?ver=b2"></script>
+
+<!-- 스와이퍼 4.5.1 -->
+<link rel="stylesheet" href="../resources/css/swiper.min.css">
+<script src="../resources/js/swiper.min.js"></script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+    <!-- 예약리스트 타이틀 -->
+    <header class="reserve_list_header">
+        <div class="header_inner">
+            <div class="alert"><span class="blind">알림</span></div>
+			<a href="#cate_pop1" class="title btn_cate">예약</a>
+			<button type="button" title="전체검색" class="search"><span class="blind">전체검색</span></button>
+        </div>
+    </header>
+    <!-- //예약리스트 타이틀 -->
+
+    <!-- [D] 버튼클릭시 토스트배너 -->
+    <div id="cate_pop1" class="category_box">
+        <div class="dim_bg"></div>
+        <div class="category_content">
+            <a href="#" class="btn_close"><span class="blind">닫기</span></a>
+            <p>정렬방식 선택</p>
+            <ul class="cate_sort">
+                <li>
+                    <input id="sort_1" type="radio" name="sort" value="1" checked="checked">
+                    <label for="sort_1">최신순</label>
+                </li>
+                <li>
+                    <input id="sort_2" type="radio" name="sort" value="2">
+                    <label for="sort_2">예약순</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- //[D] 버튼클릭시 토스트배너 -->
+
+    <!-- 예약 리스트 -->
+    <div class="inner">
+
+        <!-- category -->
+        <div class="reserve_sort">
+            <div class="info">
+                <input type="checkbox" name="checker" id="checker2" value="1" onclick="click_check();">
+                <label for="checker2">취소예약숨김</label>
+            </div>
+            <div class="sort"><a href="#cate_pop1" class="btn_cate">최신순</a></div>
+        </div>
+        <!-- category -->
+
+        <!-- 리스트 박스 -->
+        <div class="reserve_list">
+
+            <div class="reserve_list_box">
+                <span class="day">D - 6</span>
+                <span class="mark">결제완료</span>
+                <div class="text">
+                    <span class="bold">반려견 미용 / 가위컷</span>
+                    <span>2022년 2월11일(화) 09:30</span>
+                    <span>그루밍살롱 애견미용실 / 홍길동 </span>
+                </div>
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+                <div class="btn_wrap">
+                    <a href="#">예약변경</a>
+                    <a href="#">예약취소</a>
+                </div>
+            </div>
+
+            <div class="reserve_list_box">
+                <span class="day"></span>
+                <span class="mark">결제취소</span>
+                <div class="text">
+                    <span class="bold">호텔 / VIP</span>
+                    <span>2022년 2월11일(화)~2월15일(금)</span>
+                    <span>그루밍살롱 애견호텔</span>
+                </div>
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+                <div class="btn_wrap">
+                    <a href="#">상세보기</a>
+                </div>
+            </div>
+
+            <div class="reserve_list_box">
+                <span class="day">D - 0</span>
+                <span class="mark">서비스 완료</span>
+                <div class="text">
+                    <span class="bold">유치원 / 종일반</span>
+                     <span>2022년 2월11일(화)~2월15일(금)</span>
+                    <span>그루밍살롱 애견호텔</span>
+                </div>
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+                <div class="btn_wrap">
+                    <a href="#">리뷰작성</a>
+                </div>
+            </div>
+
+			 <div class="reserve_list_box">
+                <span class="day">D - 0</span>
+                <span class="mark">서비스 완료</span>
+                <div class="text">
+                    <span class="bold">유치원 / 종일반</span>
+                     <span>2022년 2월11일(화)~2월15일(금)</span>
+                    <span>그루밍살롱 애견호텔</span>
+                </div>
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+                <div class="btn_wrap">
+                    <a href="#">내가 쓴 리뷰보기</a>
+                </div>
+            </div>
+
+            <div class="reserve_list_box">
+                <span class="day">D - 0</span>
+                <span class="mark">미방문</span>
+                <div class="text">
+                    <span class="bold">반려견 미용 / 목욕</span>
+                    <span>2022년 2월11일(화) 11:30</span>
+                    <span>그루밍살롱 애견미용실 / 홍길동 </span>
+                </div>
+              
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+                <div class="btn_wrap">
+                    <a href="#">상세보기</a>
+                </div>
+            </div>
+
+            <div class="reserve_list_box">
+                <span class="day"></span>
+                <span class="mark">예약취소</span>
+                <div class="text">
+                    <span class="bold">유치원 / 종일반</span>
+                    <span>2022년 2월11일(화)~2월15일(금)</span>
+                    <span>그루밍살롱 애견호텔 </span>
+                </div>
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+                <div class="btn_wrap">
+                    <a href="#">상세보기</a>
+                </div>
+            </div>
+
+            <div class="reserve_list_box">
+                <span class="day">D - 0</span>
+                <span class="mark">예약확정</span>
+                <div class="text">
+                    <span class="bold">반려견 / 가위컷</span>
+                    <span>2022년 2월11일(화) 09:30</span>
+                    <span>그루밍살롱 애견미용실 / 홍길동 </span>
+                </div>
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+               
+                <div class="btn_wrap">
+                    <a href="#">예약변경</a>
+                    <a href="#">예약취소</a>
+                </div>
+            </div>
+
+            <div class="reserve_list_box">
+                <span class="day">D - 0</span>
+                <span class="mark">결제완료</span>
+                <div class="text">
+                    <span class="bold">반려견 미용 / 가위컷</span>
+                    <span>2022년 2월11일(화) 09:30</span>
+                    <span>그루밍살롱 애견미용실 / 홍길동 </span>
+                </div>
+                <div class="reserve_animals">
+                    <figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+                    <span class="t2">초롱이 2.5kg</span>
+                </div>
+                <div class="btn_wrap">
+                     <a href="#">예약취소</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- //리스트 박스 -->
+
+    </div>
+	<!-- //예약 리스트 -->
+
+
+
+
+
+    <!-- 하단 -->
+    <footer class="footer">
+        <div class="btn_top_wrap">
+            <a href="#wrap" class="btn_top"><span class="blind">top</span></a>
+        </div>
+    </footer>
+    <!-- //하단 -->
+
+    <!-- 툴바 -->
+    <div class="toolbar">
+        <!-- [D] 활성화시 class on 추가  -->
+		<a href="../sub/local_list.html"><span class="map">내주변</span></a>
+        <a href="#"><span class="portfolio">포트폴리오</span></a>
+        <a href="../main/index.html"><span class="home"></span></a>
+        <a href="../reserve/reserve_list.html" class="on"><span class="reservation">예약</span></a>
+        <a href="#"><span class="my">MY</span></a>
+	</div>
+    <!-- //툴바 -->
+
+</div>
+</body>
+</html>

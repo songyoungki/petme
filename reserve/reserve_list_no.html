@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css?ver=a2">
+<link rel="stylesheet" href="../resources/css/layout.css?ver=b6">
+<link rel="stylesheet" href="../resources/css/reserve.css?<?=time()?>"> <!-- 예약 css추가 -->
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common.js?ver=b2"></script>
+
+<!-- 스와이퍼 4.5.1 -->
+<link rel="stylesheet" href="../resources/css/swiper.min.css">
+<script src="../resources/js/swiper.min.js"></script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+    <!-- 예약리스트 타이틀 -->
+    <header class="reserve_list_header">
+        <div class="header_inner">
+            <div class="alert"><span class="blind">알림</span></div>
+			<a href="#" class="title">예약</a>
+			<button type="button" title="전체검색" class="search"><span class="blind">전체검색</span></button>
+        </div>
+    </header>
+    <!-- //예약리스트 타이틀 -->
+
+    <!-- 예약 리스트:없을시 -->
+    <section class="reserve_list_no">
+
+        <p>
+            예약이 없습니다.<br>
+            내 반려동물이 기뻐할 모습을 상상하며…
+        </p>
+        <!-- 버튼-예약하러 가기 -->
+        <button type="button" class="btn_go">예약하러 가기</button>
+        <!-- //버튼-예약하러 가기 -->
+
+    </section>
+	<!-- //예약 리스트:없을시 -->
+
+
+
+
+    <!-- 툴바 -->
+    <div class="toolbar">
+        <!-- [D] 활성화시 class on 추가  -->
+		<a href="../sub/local_list.html"><span class="map">내주변</span></a>
+        <a href="#"><span class="portfolio">포트폴리오</span></a>
+        <a href="../main/index.html"><span class="home"></span></a>
+        <a href="../reserve/reserve_list.html" class="on"><span class="reservation">예약</span></a>
+        <a href="#"><span class="my">MY</span></a>
+	</div>
+    <!-- //툴바 -->
+
+</div>
+</body>
+</html>

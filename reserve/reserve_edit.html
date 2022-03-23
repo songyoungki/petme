@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css?ver=a1">
+<link rel="stylesheet" href="../resources/css/reserve.css?<?=time()?>">
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://rawgithub.com/jquery/jquery-ui/1-10-stable/ui/jquery.ui.datepicker.js"></script>
+<script src="http://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
+
+
+
+<!-- 스와이퍼 4.5.1 -->
+<link rel="stylesheet" href="../resources/css/swiper.min.css">
+<script src="../resources/js/swiper.min.js"></script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+	<!-- 날짜선택 상단 -->
+	<header class="reserve_header">
+        <div class="reserve_header_inner">
+			<span class="t1"><a href="#"><img src="../images/shop/arrow__48_b.png"></a></span>
+			<span class="t2">예약변경</span>
+			<span class="t3"><a href="../main/index.html"><img src="../images/shop/icon_home_b.png"></a></span>
+        </div>
+    </header>
+	<!-- //날짜선택 상단 -->
+
+	<!-- 예약현황 정보 -->
+	<section class="reserve_section_info2">
+		<div class="reserve_info">
+			<figure>
+				<img src="../images/main/img_premium_02.png" alt="">
+			</figure>
+			<div>
+				<p>그루밍살롱 애견미용실</p>
+				<span>반려견 미용 / 가위컷</span>
+			</div>
+		</div>
+	</section>
+	<!-- //예약현황 정보 -->
+
+
+
+
+	
+	 <section class="calender_section_info">
+		<div class="inner">
+			<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+			
+			<div id="calender_box"></div>
+			<input type="text" id="date_input" class="date_input" disabled  placeholder="날짜를 선택해 주세요" value="3.23 (수)">
+	
+			<script>
+			$(function() {
+				$.datepicker.setDefaults({
+					closeText: '닫기',
+					currentText: '오늘',
+					dateFormat: 'm.d (DD)',
+					prevText: '이전 달',
+					nextText: '다음 달',
+					monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+					monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+					dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+					dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+					dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+					//showOn:"both",
+					//showOtherMonths: true,
+					selectOtherMonths: true,
+					showMonthAfterYear: true,
+					yearSuffix: '.',
+					minDate: 0, //이전날짜 비활성
+				});
+	
+				// 일요일만 선택 막기
+				function noSundays(date) {
+				return [date.getDay() != 0, ''];
+				}
+	
+				$('#calender_box').datepicker();
+				$('#date_input').change(function(){
+					$('#calender_box').datepicker('setDate', $(this).val());
+				});
+				$('#calender_box').change(function(){
+					$('#date_input').attr('value',$(this).val());
+				});
+			});
+			</script>
+	
+		</div>
+	</section> 
+	<!-- //달력 -->
+
+	<!-- 담당자 / 시간 선택 리스트 -->
+	<section class="select_section_list">
+		<h3>시간 선택</h3>
+		<ul class="select_list">
+			<li>
+				<figure>
+					<img src="../images/main/img_mainstore_06.png" alt="">
+				</figure>
+				<div class="select_info">
+					<span class="t1">홍길동 (+20,000원)</span>
+					<span class="t2">믿음과 신뢰를 드리겠습니다. <br>항상 최선을 다하는 모습 보여드리겠습니다.</span>
+				</div>
+				<div class="swiper-container date_info">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<input type="radio" name="time" id="info_check1" value="09:00">
+							<label for="info_check1">09:00</label>
+						</div>
+						<div class="swiper-slide">
+							<input type="radio" name="time" id="info_check2" value="09:30">
+							<label for="info_check2">09:30</label>
+						</div>
+						<div class="swiper-slide">
+							<input type="radio" name="time" id="info_check3" value="10:00">
+							<label for="info_check3">10:00</label>
+						</div>
+						<div class="swiper-slide">
+							<input type="radio" name="time" id="info_check4" value="11:00">
+							<label for="info_check4">11:00</label>
+						</div>
+						<div class="swiper-slide">
+							<input type="radio" name="time" id="info_check5" value="11:30">
+							<label for="info_check5">11:30</label>
+						</div>
+						<div class="swiper-slide">
+							<input type="radio" name="time" id="info_check6" value="13:30">
+							<label for="info_check6">13:30</label>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<!-- //담당자 / 시간 선택 리스트 -->
+
+	<div class="toolbar_padding3"><span class="blind">하단툴바 간격</span></div>
+
+	<!-- 예약 툴바 -->
+	<section class="reserve_toolbar">
+		<div class="inner">
+			<div class="btn_wrap mt0">
+				<button type="button" class="btn_select_end">예약변경</button>
+			</div>
+		</div>
+	</section>
+	<!-- //예약 툴바 -->
+
+	<script>
+
+// 시간바
+var sliderCategory = new Swiper('.date_info', {
+    slidesPerView: 4.6,
+    spaceBetween: 0,
+    nested :true,
+});
+
+$(document).on("mobileinit", function () {
+            //reset type="date" to type="text" to prevent default browser calendar
+            $.mobile.page.prototype.options.degradeInputs.date = true;
+
+
+            //optional: finetune swipe options
+            $.event.special.swipe.horizontalDistanceThreshold = 20;
+            $.event.special.swipe.verticalDistanceThreshold = 100;
+            $.event.special.swipe.durationThreshold = 350;
+        });
+
+$(document).off('touchstart touchend', '.ui-datepicker')
+    .on('touchstart', '.ui-datepicker', function (e) {
+        $(this).data('swipebegin', {
+            startEvent: e,
+            startTime: $.now()
+        });
+    }).on('touchend', '.ui-datepicker', function (e) {
+        var swipeData = $.extend($(this).data('swipebegin'),
+            {
+                endEvent: e,
+                endTime: $.now()
+            });
+        try {
+            //compute horizontal movement and swipe duration
+            var deltaX = swipeData.startEvent.originalEvent.changedTouches[0].pageX - swipeData.endEvent.originalEvent.changedTouches[0].pageX;
+            var deltaTime = swipeData.endTime - swipeData.startTime;
+            if (Math.abs(deltaX) > $.event.special.swipe.horizontalDistanceThreshold && deltaTime <= $.event.special.swipe.durationThreshold) {
+                if (deltaX < 0) // swiperight
+                {
+                    $('.ui-datepicker-prev', '.ui-datepicker').triggerHandler('click');
+                }
+                else //swipeleft
+                {
+                    $('.ui-datepicker-next', '.ui-datepicker').triggerHandler('click');
+                }
+            }
+        } catch (err) {
+            (console.error || console.log).call(console, 'ui-datepicker swipe error: ' + err.stack || err);
+        }
+        $(this).removeData('swipebegin');
+    });
+</script>
+
+
+</div>
+</body>
+</html>

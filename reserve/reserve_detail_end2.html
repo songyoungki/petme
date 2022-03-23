@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css?ver=a1">
+<link rel="stylesheet" href="../resources/css/reserve.css?<?=time()?>">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common.js"></script>
+
+<!-- 스와이퍼 4.5.1 -->
+<link rel="stylesheet" href="../resources/css/swiper.min.css">
+<script src="../resources/js/swiper.min.js"></script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+	<!-- 예약내역 상단 -->
+	<header class="reserve_header">
+        <div class="reserve_header_inner">
+            <span class="t2">예약내역</span>
+			<span class="t3"><a href="../reserve/reserve_list.html"><img src="../images/common/icon_close2.png"></a></span>
+        </div>
+    </header>
+	<!-- //예약내역 상단 -->
+
+	<!-- 예약현황 정보 -->
+	<section class="reserve_section_info2">
+		<div class="text">서비스 완료</div>
+		<div class="date">D - 0</div>
+	</section>
+	<!-- //예약현황 정보 -->
+
+	<!-- 예약 정보/결제정보 -->
+	<section class="payment_info2">
+		<div class="inner">
+			<h3>예약정보</h3>
+			<div class="reserve_info">
+				<figure>
+					<img src="../images/main/img_premium_02.png" alt="">
+				</figure>
+				<p>그루밍살롱 애견미용실</p>
+			</div>
+
+			<ul class="payment_list2">
+				<li>
+					<span class="t1">예약번호</span>
+					<span class="t2">P-12589632 (현장예약)</span>
+				</li>
+				<li>
+					<span class="t1">날짜</span>
+					<span class="t2">2022년 2월11일 09:30</span>
+					<span class="t2">담당자  홍길동</span>
+				</li>
+				<li class="list_type2">
+					<span class="t1">반려동물</span>
+					<div class="reserve_animals">
+						<figure><img src="../images/main/img_portfolio_03.png" alt=""></figure>
+						<span class="t2">초롱이 2.5kg</span>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span class="t1">예약자</span>
+						<span class="t2">김말순</span>
+					</div>
+					<div>
+						<span class="t1">휴대폰</span>
+						<span class="t2">010-1234-5678</span>
+					</div>
+				</li>
+				<li class="noline" id="padding_24_0_0">
+					<span class="t1">요청사항</span>
+					<span class="t2">우리 댕댕이 잘 부탁드립니다. 상처 안나게 잘 부탁드립니다. 언제나 잘 이용하고 있습니다. 감사합니다.</span>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!-- //예약하기 리스트 -->
+
+	<hr class="garoline">
+
+	<!-- 결제정보 리스트 -->
+	<section class="reserve_section_wrap">
+		<div class="inner">
+			<h3>결제정보</h3>
+			<ul class="reserve_info_list">
+				<li id="padding_24_0">
+					<div><span class="t1">반려견 미용 / 가위컷</span></div>
+					<div><span class="t2 bold">70,000원</span></div>
+					<!-- 반려견 내용 더보기 -->
+					<a href="#none" class="btn_detail"><span class="blind">더보기</span></a>
+					<ul class="detail_con">
+						<li>
+							<div><span class="t1">품종</span> <span>(소형견)</span></div>
+							<div><span class="t2">+ 20,000원</span></div>
+						</li>
+						<li>
+							<div><span class="t1">몸무게</span> <span>(3.00이상 ~ 5.00kg미만)</span></div>
+							<div><span class="t2">+ 30,000원</span></div>
+						</li>
+						<li>
+							<div><span class="t1">털길이</span> <span>(5mm)</span></div>
+							<div><span class="t2">+ 10,000원</span></div>
+						</li>
+						<li>
+							<div><span class="t1">다리 스타일</span> <span>(부츠)</span></div>
+							<div><span class="t2">+ 15,000원</span></div>
+						</li>
+						<li>
+							<div><span class="t1">몸통 스타일</span> <span>(풀코트 4cm이상)</span></div>
+							<div><span class="t2">+ 10,000원</span></div>
+						</li>
+						<li>
+							<div><span class="t1">담당자</span> <span>(홍길동)</span></div>
+							<div><span class="t2">+ 30,000원</span></div>
+						</li>
+					</ul>
+					<!-- //반려견 내용 더보기 -->
+				</li>
+			</ul>
+			<ul class="reserve_info_list list_type_line">
+				<li>
+					<div><span class="t1">상품금액</span></div>
+					<div><span class="t2">80,000원</span></div>
+				</li>
+				<li>
+					<div><span class="t1">현장 추가 결제금액</span></div>
+					<div><span class="t2">+ 10,000원</span></div>
+				</li>
+			</ul>
+
+			<ul class="reserve_info_list list_type_line noline">
+				<li>
+					<div><span class="t1 total_text">총 결제금액</span></div>
+					<div>
+						<span class="t3">신용카드</span>
+						<span class="t2 total_cost">70,000원</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!-- //결제정보 리스트 -->
+
+	<!-- 버튼 -->
+	<div class="btn_wrap type2">
+		<a href="#cate_pop1" class="btn_point">리뷰작성</a>
+	</div>
+
+		<!-- 버튼 -->
+
+	<!-- [D] 리뷰작성 토스트배너 -->
+    <div id="cate_pop1" class="review_box">
+        <div class="dim_bg"></div>
+        <div class="review_content">
+            <a href="#" class="btn_close"><span class="blind">닫기</span></a>
+            <p>리뷰 작성</p>
+
+			<div class="scroll">
+				<div class="review_content_info">
+					<figure>
+						<img src="../images/main/img_portfolio_03.png" alt="">
+					</figure>
+					<p>반려견 미용 / 가위컷</p>
+				</div>
+				
+				<div class="review_content_wrap">
+					<!-- 별점 -->
+					<form name="reviewform" class="reviewform" method="post" action="/save">
+						<input type="hidden" name="rate" id="rate" value="0"/>
+						<p class="text">서비스에 대해 얼마나 만족하시나요?</p>
+						<div class="rating">
+							<!-- 해당 별점을 클릭하면 해당 별과 그 왼쪽의 모든 별의 체크박스에 checked 적용 -->
+							<input type="checkbox" name="rating" id="rating1" value="1" class="rate_radio" title="1점">
+							<label for="rating1"></label>
+							<input type="checkbox" name="rating" id="rating2" value="2" class="rate_radio" title="2점">
+							<label for="rating2"></label>
+							<input type="checkbox" name="rating" id="rating3" value="3" class="rate_radio" title="3점" >
+							<label for="rating3"></label>
+							<input type="checkbox" name="rating" id="rating4" value="4" class="rate_radio" title="4점">
+							<label for="rating4"></label>
+							<input type="checkbox" name="rating" id="rating5" value="5" class="rate_radio" title="5점">
+							<label for="rating5"></label>
+						</div>
+						<div class="review_contents">
+							<textarea id="review_textarea" name="review" cols="30" placeholder="해당 서비스에 대한 고객님의 솔직한 평가를 남겨주세요 (최소 10자 이상 작성)">친절한 서비스에 감사드립니다.</textarea>
+							<div id="review_cnt"><span>0</span> / 최대 300자</div>
+						</div>
+					</form>
+					<!-- //별점 -->
+
+					<!-- 사진첨부 -->
+					<p class="text">사진첨부</p>
+
+					<ul class="photo_box_ul">
+					
+					<li class="photo_box no1">
+                    <img src="../images/reserve/img_portfolio_03.png" alt="">
+					<input type="button" delfile="img.png" class="btn_photo_del">
+					</li>
+					<li class="photo_box">
+                    <img src="../images/reserve/img_portfolio_03.png" alt="">
+					<input type="button" delfile="img.png" class="btn_photo_del">
+					</li>
+					<li class="photo_box">
+                    <img src="../images/reserve/img_portfolio_03.png" alt="">
+					<input type="button" delfile="img.png" class="btn_photo_del">
+					</li>
+					
+
+					</ul>
+
+					<ul class="photo_box_ul">
+					
+					<li class="photo_box no1">
+                    <img src="../images/reserve/img_portfolio_03.png" alt="">
+					<input type="button" delfile="img.png" class="btn_photo_del">
+					</li>
+					<li class="photo_box">
+                    <img src="../images/reserve/sq_529.png" alt="">
+					</li>
+				
+					
+
+					</ul>
+
+					
+					<!-- //사진첨부 -->
+
+				</div>
+
+				<div class="toolbar_paddingt"><span class="blind">하단툴바 간격</span></div>
+			
+			</div>
+			
+        </div>		
+		<!-- 예약 툴바 -->
+		<section class="reserve_toolbar">
+			<div class="inner">
+				<div class="btn_wrap">
+					<!-- [D] 비활성화시 disabled 추가 -->
+					<button type="button" class="btn_select_end" >리뷰작성 완료</button>
+				</div>
+			</div>
+		</section>
+		<!-- //예약 툴바 -->
+    </div>
+	<!-- //[D] 리뷰작성 토스트배너 -->
+
+
+	
+
+	
+
+	<script>
+	// 반려견 미용/가위컷 상세정보 나타나기
+	$('.btn_detail').on('click',function(e) {
+        e.preventDefault();
+        if ($(this).parent().hasClass('on')) {
+            $(this).parent().removeClass('on').find('.detail_con').slideUp(300);
+        } else {
+            $(this).parent().addClass('on').find('.detail_con').slideDown(300);
+        }
+    });
+
+	// 리뷰작성, 내가 쓴 리뷰 토스트배너
+    $('.btn_point').on('click', function() {
+        $(".review_box .btn_close").show();
+        $(".review_box" + $(this).attr("href")).fadeIn(200);
+        $(".review_box").find('.review_content').animate({top:20}, 200);
+        $("body").css({'height':$(window).height(), 'overflow':'hidden'});
+    });
+    $('.review_box .btn_close').on('click', function(e) {
+		e.preventDefault();
+        $(".btn_agree").show();
+        $(".review_box").fadeOut(300);
+        $(".review_box").find('.review_content').animate({bottom:-150}, 300);
+        $("body").css({'height':'auto', 'overflow':'auto'});
+    });
+	
+	//별점 체크
+	function Rating(){};
+	Rating.prototype.rate = 0;
+	Rating.prototype.setRate = function(newrate){
+
+		this.rate = newrate;
+		let items = document.querySelectorAll('.rate_radio');
+		items.forEach(function(item, idx){
+			if(idx < newrate){
+				item.checked = true;
+			}else{
+				item.checked = false;
+			}
+		});
+	}
+	let rating = new Rating();
+
+	document.addEventListener('DOMContentLoaded', function(){
+		document.querySelector('.rating').addEventListener('click',function(e){
+			let elem = e.target;
+			if(elem.classList.contains('rate_radio')){
+				rating.setRate(parseInt(elem.value));
+			}
+		})
+	});
+
+	//textarea 최대글자수 
+	$('#review_textarea').on('keyup', function() {
+		$('#review_cnt').html(" <span>"+ $(this).val().length +"</span> / 최대 300자");
+
+		if($(this).val().length > 300) {
+			$(this).val($(this).val().substring(0, 300));
+			$('#review_cnt').html("300 / 300");
+		}
+	});
+
+	// 첨부파일 이미지 업로드
+	function fileUploadAction() {
+		console.log("fileUploadAction");
+		$("#btnAtt").trigger('click');
+	}
+
+	imageView = function imageView(att_zone, btn){
+
+	var attZone = document.getElementById(att_zone);
+	var btnAtt = document.getElementById(btn)
+	var sel_files = [];
+
+	// 이미지와 체크 박스를 감싸고 있는 div 속성
+	var div_style = 'photo_box';
+	// 미리보기 이미지 속성
+	var img_style = 'img';
+	// 이미지안에 표시되는 체크박스의 속성
+	var chk_style = 'btn_photo_del';
+
+	btnAtt.onchange = function(e){
+		var files = e.target.files;
+		var fileArr = Array.prototype.slice.call(files)
+		for(f of fileArr){
+			imageLoader(f);
+		}
+	} 
+
+	// 탐색기에서 드래그앤 드롭 사용
+	attZone.addEventListener('dragenter', function(e){
+		e.preventDefault();
+		e.stopPropagation();
+	}, false)
+
+	attZone.addEventListener('dragover', function(e){
+		e.preventDefault();
+		e.stopPropagation();
+	}, false)
+
+	attZone.addEventListener('drop', function(e){
+		var files = {};
+		e.preventDefault();
+		e.stopPropagation();
+		var dt = e.dataTransfer;
+		files = dt.files;
+		for(f of files){
+			imageLoader(f);
+		}
+	}, false)
+
+	/*첨부된 이미리즐을 배열에 넣고 미리보기 */
+	imageLoader = function(file){
+	sel_files.push(file);
+	var reader = new FileReader();
+	reader.onload = function(ee){
+		let img = document.createElement('img')
+		img.setAttribute('class', img_style)
+		img.src = ee.target.result;
+		attZone.appendChild(makeDiv(img, file));
+	}
+	
+	reader.readAsDataURL(file);
+	}
+
+	/*첨부된 파일이 있는 경우 checkbox와 함께 attZone에 추가할 div를 만들어 반환 */
+	makeDiv = function(img, file){
+	var div = document.createElement('div')
+	div.setAttribute('class', div_style)
+	
+	var btn = document.createElement('input')
+	btn.setAttribute('type', 'button')
+	//btn.setAttribute('value', '삭제')
+	btn.setAttribute('delFile', file.name);
+	btn.setAttribute('class', chk_style);
+	btn.onclick = function(ev){
+		var ele = ev.srcElement;
+		var delFile = ele.getAttribute('delFile');
+		for(var i=0 ;i<sel_files.length; i++){
+		if(delFile== sel_files[i].name){
+			sel_files.splice(i, 1);      
+		}
+		}
+		
+		dt = new DataTransfer();
+		for(f in sel_files) {
+		var file = sel_files[f];
+		dt.items.add(file);
+		}
+		btnAtt.files = dt.files;
+		var p = ele.parentNode;
+		attZone.removeChild(p)
+	}
+	div.appendChild(img)
+	div.appendChild(btn)
+	return div
+	}
+	}('att_zone', 'btnAtt')
+
+	
+	</script>
+
+
+</div>
+</body>
+</html>
