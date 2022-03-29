@@ -117,9 +117,9 @@ $(function() {
     });
 
     // 메인 : 내주변 매장 포트폴리오 탭메뉴
-    $(".portfolio_wrap .portfolio_tab li").click(function() {
-        $(".portfolio_wrap .portfolio_tab li").removeClass('on');
-        $(".portfolio_wrap .content").removeClass('on');
+    $(".portfolio_wrap2 .portfolio_tab li").click(function() {
+        $(".portfolio_wrap2 .portfolio_tab li").removeClass('on');
+        $(".portfolio_wrap2 .content").removeClass('on');
         $(this).addClass('on');
         $("#" + $(this).data('id')).addClass('on');
     });
