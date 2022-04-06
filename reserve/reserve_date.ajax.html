@@ -32,6 +32,7 @@ if($get['year'].$get['month'] < date("Ym"))
 
 $sdate = "";
 $edate = "";
+$tdate = "";
 
 if(!empty($get['sdate']) && !empty($get['edate']) && !empty($get['click_date']))
 {
@@ -72,6 +73,12 @@ else
     $edate = "";
 }
 
+if(!empty($edate))
+{
+    $ar_time = mktime(1, 1, 1, substr($edate, 4, 2), substr($edate, 6, 2), substr($edate, 0, 4));
+    $tdate = date("Ymd", strtotime("-1 day", $ar_time));
+}
+
 
 $date_input = "";
 $date_arr = array();
@@ -98,8 +105,8 @@ $cal['nextmonth'] = date("m", mktime(0, 0, 0, $get['month'] + 1, 1, $get['year']
 ?>
 <?php if(isset($_POST['year'])):?><?=$get['year']?>|^|<?=$get['month']?>|^|<?=$sdate?>|^|<?=$edate?>|^|<?=$date_input?>|^|<?php endif?><div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;">
     <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
-        <a class="ui-datepicker-prev ui-corner-all" onclick="cal_ajax('<?=$cal['prevyear']?>', '<?=$cal['prevmonth']?>', '');" title="이전 달"><span class="ui-icon ui-icon-circle-triangle-w">이전 달</span></a>
-        <a class="ui-datepicker-next ui-corner-all" onclick="cal_ajax('<?=$cal['nextyear']?>', '<?=$cal['nextmonth']?>', '');" title="다음 달"><span class="ui-icon ui-icon-circle-triangle-e">다음 달</span></a>
+        <a class="ui-datepicker-prev ui-corner-all" onclick="cal_ajax('<?=$cal['prevyear']?>', '<?=$cal['prevmonth']?>', '', '1');" title="이전 달"><span class="ui-icon ui-icon-circle-triangle-w">이전 달</span></a>
+        <a class="ui-datepicker-next ui-corner-all" onclick="cal_ajax('<?=$cal['nextyear']?>', '<?=$cal['nextmonth']?>', '', '1');" title="다음 달"><span class="ui-icon ui-icon-circle-triangle-e">다음 달</span></a>
         <div class="ui-datepicker-title">
             <span class="ui-datepicker-year"><?=$get['year']?></span>.&nbsp;<span class="ui-datepicker-month"><?=$get['month']?></span>
         </div>
@@ -142,8 +149,47 @@ $cal['nextmonth'] = date("m", mktime(0, 0, 0, $get['month'] + 1, 1, $get['year']
             $date8 = $get['year'].$get['month'].$j;
             ?>
             <?php if($date8 >= date("Ymd")):?>
-            <td class="<?php if($date8 == date("Ymd")):?>ui-state-default ui-state-highlight <?php endif?><?php if($sdate == $date8):?>ui-state-active <?php elseif($edate == $date8):?>ui-state-end <?php elseif(in_array($date8, $date_arr)):?>ui-state-mid <?php endif?><?php if($k == 0 || $k == 6):?>ui-datepicker-week-end <?php endif?>">
-                <a class="ui-state-default" href="javascript:void(0);" onclick="cal_ajax('<?=$get['year']?>', '<?=$get['month']?>', '<?=$date8?>');"><?=$day?></a>
+            <?php
+            $add_class = "";
+            if(!empty($sdate) && empty($edate))
+            {
+                if($sdate == $date8)
+                {
+                    $add_class = "ui-state-active stu";
+                }
+            }
+            elseif(!empty($sdate) && !empty($edate))
+            {
+                if($sdate == $tdate) //1막 2일
+                {
+                    if($sdate == $date8)
+                    {
+                        $add_class = "ui-state-active stu3";
+                    }
+                    elseif($edate == $date8)
+                    {
+                        $add_class = "ui-state-end ste";
+                    }
+                }
+                else
+                {
+                    if($sdate == $date8)
+                    {
+                        $add_class = "ui-state-active stu2";
+                    }
+                    elseif($edate == $date8)
+                    {
+                        $add_class = "ui-state-end ste2";
+                    }
+                    elseif(in_array($date8, $date_arr))
+                    {
+                        $add_class = "ui-state-mid stm2";
+                    }
+                }
+            }
+            ?>
+            <td class="<?php if($date8 == date("Ymd")):?>ui-state-default ui-state-highlight <?php endif?><?php if($k == 0 || $k == 6):?>ui-datepicker-week-end <?php endif?><?=$add_class?>">
+                <a class="ui-state-default" href="javascript:void(0);" onclick="cal_ajax('<?=$get['year']?>', '<?=$get['month']?>', '<?=$date8?>', '');"><?=$day?></a>
             </td>
             <?php else:?>
             <td class="ui-datepicker-unselectable ui-state-disabled<?php if($k == 0 || $k == 6):?> ui-datepicker-week-end<?php endif?>">
@@ -159,3 +205,10 @@ $cal['nextmonth'] = date("m", mktime(0, 0, 0, $get['month'] + 1, 1, $get['year']
     </tbody>
     </table>
 </div>
+<?php
+/*
+echo "sdate ".$sdate."<br>";
+echo "tdate ".$tdate."<br>";
+print_r($get);
+*/
+?>
