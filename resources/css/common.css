@@ -58,7 +58,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 
 /* basic tags selector */
 img{max-width:100%;vertical-align:middle}
-strong, b{font-family:inherit;font-weight:700;}
+strong, b{font-family:inherit;font-weight:500;}
 em,address{font-style:normal;}
 blockquote,q{quotes:none}
 blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}
