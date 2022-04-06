@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css">
+<link rel="stylesheet" href="../resources/css/shop.css?<?=time()?>">
+<link rel="stylesheet" href="../resources/css/main.css">
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common.js"></script>
+</head>
+<style>
+input::-webkit-input-placeholder { font-size: 14px; letter-spacing: -0.45px;}
+input::-moz-placeholder { font-size: 14px; letter-spacing: -0.45px;}
+input:-ms-input-placeholder { font-size: 14px; letter-spacing: -0.45px;}
+input:-moz-placeholder { font-size: 14px; letter-spacing: -0.45px;}
+input::placeholder { font-size: 14px; letter-spacing: -0.45px;}
+</style>
+<script>
+function click_id()
+{
+    if($('#input_text').val() == "")
+    {
+        $('.btn_cancle').hide();
+    }
+    else
+    {
+        $('.btn_cancle').show();
+    }
+	 }
+</script>
+<body>
+
+<div class="wrap" id="wrap">
+	<!-- 예약완료 상단 -->
+ <div class="detail_review" style="display:  inline-table; border:none;">
+	   <div class="detail_review_inner">
+		<span class="t1"><img  src="../images/shop/arrow__48_b.png"></span>
+		<span class="t2">검색</span>
+		<span class="t3"><img  src="../images/shop/icon_home_b.png"></span>
+				 </div>
+
+     <!-- 주소검색 -->
+        <section class="address_search_wrap" style="border-top: 1px solid #EDEDED;">
+            <div class="inner">
+              
+                <!-- 검색 -->
+                <div class="add_search">
+                    <form id="totalSearchForm" name="search" method="post"></form>
+                        <button type="button" id="totalSearch" title="전체검색" class="btn_allsearch"><span class="blind">전체검색</span></button>
+                        <fieldset>
+                            <legend>검색 폼</legend>
+                            <input type="text" id="text_add" class="blind">
+                            <input type="text" id="input_text" name="s" value="" title="지역, 매장을 검색하세요." placeholder="지역, 매장을 검색하세요." class="search_result" onkeyup="click_id();">                            
+                            <button type="button" title="취소" class="btn_cancle" style="display:none;" ><span class="blind">취소</span></button>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- //검색 -->
+            </div>
+        </section>
+        <!-- //주소검색 -->
+
+    <!-- 본문내용 -->
+    <div class="container">
+
+       <!-- 주소검색 -->
+     
+        <!-- //주소검색 -->
+
+
+		 <!-- 최근검색 -->
+        <section class="recently_search_wrap">
+            <div class="inner">
+                <div class="text">
+                    <p>추천 검색어</p>
+                   
+                </div>
+                <ul class="recently_list2">
+                    <li>
+                        <span>가위컷</span><span>클리핑</span><span>유치원</span><span>미용</span><span>호텔</span>
+                    </li>
+
+                   
+                </ul>
+            </div>
+        </section>
+        <!-- //최근검색 -->
+
+      
+
+        <!-- 최근검색 -->
+        <section class="recently_search_wrap22">
+            <div class="inner">
+                <div class="text">
+                    <p>최근검색</p>
+                    <button type="button" title="전체삭제" class="btn_alldel">전체삭제</button>
+                </div>
+                <ul class="recently_list">
+                    <li>
+                        서울 
+                        <button type="button" title="삭제" class="btn_delete"><span class="blind">삭제</span></button>
+                    </li>
+                    <li>
+                        서울 강남구 
+                        <button type="button" title="삭제" class="btn_delete"><span class="blind">삭제</span></button>
+                    </li>
+                    <li>
+                        서울 강남구 역삼동 
+                        <button type="button" title="삭제" class="btn_delete"><span class="blind">삭제</span></button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- //최근검색 -->
+
+      
+
+    </div>
+    <!-- //본문내용 -->
+</div>
+</body>
+</html>

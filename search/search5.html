@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css?ver=a2">
+<link rel="stylesheet" href="../resources/css/layout.css?<?=time()?>">
+<link rel="stylesheet" href="../resources/css/main.css">
+<link rel="stylesheet" href="../resources/css/my.css?<?=time()?>">
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common.js?ver=b2"></script>
+
+<!-- 스와이퍼 4.5.1 -->
+<link rel="stylesheet" href="../resources/css/swiper.min.css">
+<script src="../resources/js/swiper.min.js"></script>
+<script>
+function click_id()
+{
+    if($('#input_text').val() == "")
+    {
+        $('.btn_cancle').hide();
+    }
+    else
+    {
+        $('.btn_cancle').show();
+    }
+	 }
+</script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+
+
+     <div class="detail_review">
+	   <div class="detail_review_inner">
+		<span class="t1"><img  src="../images/shop/arrow__48_b.png"></span>
+		<span class="t2">검색</span>
+		<span class="t3"><img  src="../images/shop/icon_home_b.png"></span>
+	   </div>
+
+
+ <!-- 주소검색 -->
+        <div class="address_search_wrap2" style="border-top: 1px solid #EDEDED;">
+                <div class="inner" style="position: relative;">
+             
+                <!-- 검색 -->
+                <div class="add_search" style="width:90%;">
+                    <form id="totalSearchForm" name="search" method="post"></form>
+                        <button type="button" id="totalSearch" title="전체검색" class="btn_allsearch"><span class="blind">전체검색</span></button>
+                        <fieldset>
+                            <legend>검색 폼</legend>
+                            <input type="text" id="text_add" class="blind">
+                           <input type="text" id="input_text" name="s" value="" title="지역, 매장을 검색하세요." placeholder="지역, 매장을 검색하세요." class="search_result" onkeyup="click_id();">                            
+                            <button type="button" title="취소" class="btn_cancle" style="display:none;" ><span class="blind">취소</span></button>
+                        </fieldset>
+                    </form>
+					
+                </div>
+                <!-- //검색 -->
+				<a href="search4.html" class="btn_map3"><span class="blind">리스트보기</span></a>
+
+            </div>
+
+			<div class="swiper-container local_category swiper-container-initialized swiper-container-horizontal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide-active" style="width: 103.333px;">
+                    <!-- 반려견미용 [D] 버튼클릭시 토스트배너 출력 -->
+                    <a href="#cate_pop1" class="btn_cate">반려견미용</a>
+                </div>
+                <div class="swiper-slide swiper-slide-next" style="width: 103.333px;">
+                    <!-- 편의시설 [D] 버튼클릭시 토스트배너 출력 -->
+                    <a href="#cate_pop2" class="btn_cate">편의시설 <span class="desc">14</span></a>
+                </div>
+                <div class="swiper-slide" style="width: 103.333px;">
+                    <!-- 거리순 [D] 버튼클릭시 토스트배너 출력 -->
+                    <a href="#cate_pop3" class="btn_cate">거리순</a>
+                </div>
+                <div class="swiper-slide" style="width: 103.333px;">
+                    <!-- 제휴/비제휴점 [D] 버튼클릭시 토스트배너 출력 -->
+                    <a href="#cate_pop4" class="btn_cate">제휴/비제휴점</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- //주소검색 -->
+
+
+      </div>
+	<!-- //예약완료 상단 -->
+  
+
+
+   
+
+    <!-- [D] 버튼클릭시 토스트배너 -->
+    <div id="cate_pop1" class="category_box">
+        <div class="dim_bg"></div>
+        <div class="category_content">
+            <a href="#" class="btn_close"><span class="blind">닫기</span></a>
+            <p>서비스 선택</p>
+            <ul class="cate_service">
+                <li>
+                    <input id="service_1" type="radio" name="service" value="1">
+                    <label for="service_1">
+                        <span class="text">반려견미용</span>
+                        <img src="../images/main/img_service_01.png" alt="" />
+                    </label>
+                </li>
+                <li>
+                    <input id="service_2" type="radio" name="service" value="2">
+                    <label for="service_2">
+                        <span class="text">반려묘미용</span>
+                        <img src="../images/main/img_service_02.png" alt="" />
+                    </label>
+                </li>
+                <li>
+                    <input id="service_3" type="radio" name="service" value="3">
+                    <label for="service_3">
+                        <span class="text">호텔</span>
+                        <img src="../images/main/img_service_03.png" alt="" />
+                    </label>
+                </li>
+                <li>
+                    <input id="service_4" type="radio" name="service" value="4">
+                    <label for="service_4">
+                        <span class="text">유치원</span>
+                        <img src="../images/main/img_service_04.png" alt="" />
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="cate_pop2" class="category_box">
+        <div class="dim_bg"></div>
+        <div class="category_content">
+            <a href="#" class="btn_close"><span class="blind">닫기</span></a>
+            <p>편의시설 선택</p>
+            <ul class="cate_amenities">
+                <li>
+                    <input id="amenities_1" type="checkbox" name="amenities" value="1">
+                    <label for="amenities_1">주차가능</label>
+                </li>
+                <li>
+                    <input id="amenities_2" type="checkbox" name="amenities" value="2">
+                    <label for="amenities_2">픽업가능</label>
+                </li>
+                <li>
+                    <input id="amenities_3" type="checkbox" name="amenities" value="3">
+                    <label for="amenities_3">애견카페</label>
+                </li>
+                <li>
+                    <input id="amenities_4" type="checkbox" name="amenities" value="4">
+                    <label for="amenities_4">놀이터</label>
+                </li>
+			</ul>
+			<ul class="cate_amenities">
+                <li>
+                    <input id="amenities_5" type="checkbox" name="amenities" value="1">
+                    <label for="amenities_5">주말영업</label>
+                </li>
+                <li>
+                    <input id="amenities_6" type="checkbox" name="amenities" value="2">
+                    <label for="amenities_6">야간영업</label>
+                </li>
+                <li>
+                    <input id="amenities_7" type="checkbox" name="amenities" value="3">
+                    <label for="amenities_7">동시미용</label>
+                </li>
+                <li>
+                    <input id="amenities_8" type="checkbox" name="amenities" value="4">
+                    <label for="amenities_8">Wi-Fi</label>
+                </li>
+				</ul>
+			<ul class="cate_amenities">
+                <li>
+                    <input id="amenities_9" type="checkbox" name="amenities" value="1">
+                    <label for="amenities_9">셀프목욕</label>
+                </li>
+                <li>
+                    <input id="amenities_10" type="checkbox" name="amenities" value="2">
+                    <label for="amenities_10">용품판매</label>
+                </li>
+                <li>
+                    <input id="amenities_11" type="checkbox" name="amenities" value="3">
+                    <label for="amenities_11">동물병원</label>
+                </li>
+                <li>
+                    <input id="amenities_12" type="checkbox" name="amenities" value="4">
+                    <label for="amenities_12">CCTV</label>
+                </li>
+				</ul>
+			<ul class="cate_amenities">
+                <li>
+                    <input id="amenities_13" type="checkbox" name="amenities" value="1">
+                    <label for="amenities_13">클리핑전문</label>
+                </li>
+                <li>
+                    <input id="amenities_14" type="checkbox" name="amenities" value="2">
+                    <label for="amenities_14">애견교육</label>
+                </li>
+                <li>
+                    <input id="amenities_15" type="checkbox" name="amenities" value="3">
+                    <label for="amenities_15">무마취</label>
+                </li>
+                <li>
+                    <input id="amenities_16" type="checkbox" name="amenities" value="4">
+                    <label for="amenities_16">마사지</label>
+                </li>
+				</ul>
+			<ul class="cate_amenities">
+                <li>
+                    <input id="amenities_17" type="checkbox" name="amenities" value="1">
+                    <label for="amenities_17">포토존</label>
+                </li>
+                <li>
+                    <input id="amenities_18" type="checkbox" name="amenities" value="2">
+                    <label for="amenities_18">아로마</label>
+                </li>
+                <li>
+                    <input id="amenities_19" type="checkbox" name="amenities" value="3">
+                    <label for="amenities_19">스파</label>
+                </li>
+                <li>
+                    <input id="amenities_20" type="checkbox" name="amenities" value="4">
+                    <label for="amenities_20">분양</label>
+                </li>
+            </ul>
+            <div class="btn_wrap">
+                <a href="#" class="btn_reset">초기화</a>
+                <a href="#" class="btn_confirm">확인</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="cate_pop3" class="category_box">
+        <div class="dim_bg"></div>
+        <div class="category_content">
+            <a href="#" class="btn_close"><span class="blind">닫기</span></a>
+            <p>정렬방식 선택</p>
+            <ul class="cate_sort">
+                <li>
+                    <input id="sort_1" type="radio" name="sort" value="1" checked="checked">
+                    <label for="sort_1">주변순</label>
+                </li>
+                <li>
+                    <input id="sort_2" type="radio" name="sort" value="2">
+                    <label for="sort_2">평점순</label>
+                </li>
+                <li>
+                    <input id="sort_3" type="radio" name="sort" value="3">
+                    <label for="sort_3">추천순</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="cate_pop4" class="category_box">
+        <div class="dim_bg"></div>
+        <div class="category_content">
+            <a href="#" class="btn_close"><span class="blind">닫기</span></a>
+            <p>제휴/비제휴점 선택</p>
+            <ul class="cate_sort">
+                <li>
+                    <input id="affiliate_1" type="radio" name="affiliate" value="1" checked="checked">
+                    <label for="affiliate_1">제휴/비제휴점 모두</label>
+                </li>
+                <li>
+                    <input id="affiliate_2" type="radio" name="affiliate" value="2">
+                    <label for="affiliate_2">제휴점</label>
+                </li>
+                <li>
+                    <input id="affiliate_3" type="radio" name="affiliate" value="3">
+                    <label for="affiliate_3">비제휴점</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- //[D] 버튼클릭시 토스트배너 -->
+ 
+
+
+ <!-- 본문내용 -->
+    <div class="container sub_content">
+        <!-- 내주변 지도보기 -->
+        <section class="map_warp">
+            
+            <!-- 매장리스트 -->
+            <div class="swiper-container slider_map_list">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <!-- [D] btn_del 버튼클릭시 레이어팝업 -->
+                        <a href="#" class="btn_del">
+                            <figure class="thumbimg">
+                                <span class="mark">제휴</span>
+                                <img src="../images/main/img_mainstore_01.png" alt="" />
+                            </figure>
+                            <div class="content_wrap">
+                                <p class="category">반려견미용<span style="font-size:14px; padding:0 2px;">&bull;</span>유치원</p>
+                                <p class="title">그루밍살롱 애견..</p>
+                                <p class="address"><span class="rate_t2">서울 강남구</span>|<span class="rate_t3">2.5km</span></p>
+                                <p class="rate"><span class="rate_all">5.0</span><span class="rate_t1">(1,253)</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="btn_del">
+                            <figure class="thumbimg">
+                                <span class="mark">제휴</span>
+                                <img src="../images/main/img_mainstore_02.png" alt="" />
+                            </figure>
+                            <div class="content_wrap">
+                                <p class="category">반려견미용<span style="font-size:14px; padding:0 2px;">&bull;</span>유치원</p>
+                                <p class="title">그루밍살롱 애견..</p>
+                                <p class="address"><span class="rate_t2">서울 강남구</span>|<span class="rate_t3">2.5km</span></p>
+                                <p class="rate"><span class="rate_all">5.0</span><span class="rate_t1">(1,253)</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="btn_del">
+                            <figure class="thumbimg">
+                                <span class="mark">제휴</span>
+                                <img src="../images/main/img_mainstore_03.png" alt="" />
+                            </figure>
+                            <div class="content_wrap">
+                                <p class="category">반려견미용<span style="font-size:14px; padding:0 2px;">&bull;</span>유치원</p>
+                                <p class="title">그루밍살롱 애견..</p>
+                                <p class="address"><span class="rate_t2">서울 강남구</span>|<span class="rate_t3">2.5km</span></p>
+                                <p class="rate"><span class="rate_all">5.0</span><span class="rate_t1">(1,253)</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="btn_del">
+                            <figure class="thumbimg">
+                                <span class="mark">제휴</span>
+                                <img src="../images/main/img_mainstore_04.png" alt="" />
+                            </figure>
+                            <div class="content_wrap">
+                                <p class="category">반려견미용<span style="font-size:14px; padding:0 2px;">&bull;</span>유치원</p>
+                                <p class="title">그루밍살롱 애견..</p>
+                                <p class="address"><span class="rate_t2">서울 강남구</span>|<span class="rate_t3">2.5km</span></p>
+                                <p class="rate"><span class="rate_all">5.0</span><span class="rate_t1">(1,253)</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="btn_del">
+                            <figure class="thumbimg">
+                                <span class="mark">제휴</span>
+                                <img src="../images/main/img_mainstore_05.png" alt="" />
+                            </figure>
+                            <div class="content_wrap">
+                                <p class="category">반려견미용<span style="font-size:14px; padding:0 2px;">&bull;</span>유치원</p>
+                                <p class="title">그루밍살롱 애견..</p>
+                                <p class="address"><span class="rate_t2">서울 강남구</span>|<span class="rate_t3">2.5km</span></p>
+                                <p class="rate"><span class="rate_all">5.0</span><span class="rate_t1">(1,253)</span></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- //매장리스트 -->
+            <!-- 설정 레이어팝업 -->
+            <div class="pop_wrap">
+                <div class="pop_inner">
+                    <div class="pop_content">
+                        <p>위치서비스 설정이 필요합니다. <br>휴대폰설정 > 위치서비스를 켜주세요</p>
+                        <div class="btn_wrap">
+                            <a href="#" class="btn_confirm type2">확인</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //설정 레이어팝업 -->
+
+            <!-- * 카카오맵 - 지도퍼가기 샘플 -->
+            
+           <div id="map" style="width:100%;height:100%;">
+		   <div id="daumRoughmapContainer1646313246227" class="root_daum_roughmap root_daum_roughmap_landing">
+			
+			  <img src="../images/sub/dot.png" class="dot"  alt="" />
+			  <img src="../images/sub/icon_dot.png" class="icon_dot"  alt="" style="top:32px;" />
+			  <div id="point" onclick="test()"><img src="../images/sub/icon_logo_on.png" class=""   alt="" />&nbsp;그루밍살롱</div>
+
+			<div id="point_off" onclick="test1()"><img src="../images/sub/icon_logo.png" class=""  alt="" />&nbsp;블루밍독</div>
+
+			<div id="point_off2" onclick="test2()">블루밍독</div>
+
+			</div>
+			</div>
+<!-- //버튼-지역설정완료 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a39979d502d34425713e4aefe1a9c32c"></script>
+<script>
+    var lat = "";
+    var lon = "";
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            level: 5 // 지도의 확대 레벨
+        };
+    var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+    // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
+    if (navigator.geolocation) {
+        // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+        navigator.geolocation.getCurrentPosition(function(position) {
+            lat = position.coords.latitude;    // 위도
+            lon = position.coords.longitude; // 경도
+            var locPosition = new daum.maps.LatLng(lat, lon) // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+            // 마커와 인포윈도우를 표시합니다
+            displayMarker(locPosition);
+        });
+    } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+        var locPosition = new daum.maps.LatLng(33.450701, 126.570667)
+        displayMarker(locPosition);
+    }
+    // 지도에 마커와 인포윈도우를 표시하는 함수입니다
+    function displayMarker(locPosition) {
+        // 마커를 생성합니다
+        var marker = new daum.maps.Marker({
+            map: map,
+            position: locPosition
+        });
+        // 지도 중심좌표를 접속위치로 변경합니다
+        map.setCenter(locPosition);
+    }
+</script>
+            <!-- //* 카카오맵 - 지도퍼가기 샘플 -->
+
+        </section>
+        <!-- //내주변 지도보기 -->
+    </div>
+    <!-- //본문내용 -->
+  <script>
+    var swiper = new Swiper(".slider_map_list", {
+     
+       slidesPerView: 1.2,
+        spaceBetween: 12,
+        centeredSlides: true,
+        loop: true,
+        loopAdditionalSlides: 12,
+        speed: 800,
+        autoplay: false,
+    });
+ 
+    function test() {
+        swiper.slideTo(0, 1000, false)
+    }
+
+	 function test1() {
+        swiper.slideTo(1, 1000, false)
+    }
+
+	 function test2() {
+        swiper.slideTo(2, 1000, false)
+    }
+
+	 function test3() {
+        swiper.slideTo(3, 1000, false)
+    }
+
+
+</script>
+
+</div>
+</body>
+</html>
