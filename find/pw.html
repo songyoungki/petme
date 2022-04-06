@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <title>펫미</title>
 <link rel="stylesheet" href="../resources/css/common.css?ver=a1">
-<link rel="stylesheet" href="../resources/css/layout.css?ver=b1">
+<link rel="stylesheet" href="../resources/css/layout.css?<?=time()?>">
 <link rel="stylesheet" href="../resources/css/main.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <script src="../resources/js/jquery-3.4.1.js"></script>
@@ -237,7 +237,7 @@ function click_id()
 
 								 
 								 <input type="text" id="input_phone2" name="phone2"  title="휴대폰번호 인증" placeholder="인증번호를 입력해 주세요" class="login_input" style="text-indent: 0px; display:none;" onkeyup="lo_check();" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-								 <i class="fa-times5"  style="display:none; " onclick="#">4 :55</i>
+								<i class="fa-times5"  style="display:none; " onclick="#"> <span class="v0403">04:55</span> <span class="v0404">확인</span></i>
                             </fieldset>
                        </div>
                      </li>
