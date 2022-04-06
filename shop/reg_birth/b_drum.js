@@ -114,7 +114,7 @@
 		var HTMLselect = ($(element))[0];
 		var obj = this;
 		var settings = $.extend({
-			panelCount : 16,
+			panelCount : 12,
 			rotateFn : 'rotateX',
 			interactive: true,
 			dail_w: 20,
