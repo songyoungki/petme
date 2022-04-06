@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <title>펫미</title>
 <link rel="stylesheet" href="../resources/css/common.css?ver=a1">
-<link rel="stylesheet" href="../resources/css/layout.css?ver=b2">
+<link rel="stylesheet" href="../resources/css/layout.css?<?=time()?>">
 <link rel="stylesheet" href="../resources/css/main.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <script src="../resources/js/jquery-3.4.1.js"></script>
@@ -111,7 +111,9 @@ input::placeholder {
 
 #route {width: 4vw;}
 
-.p_info {font-size:14px; padding-top:11.5px; font-weight: 400; letter-spacing: -0.8px; }
+  .p_info {    position: relative;   padding: 0 0 0px 10px;   font-size:14px; padding-top:11.5px; font-weight: 400; letter-spacing: -0.8px;}
+  .p_info:before { content: '\002A'; position: absolute; left: 2px; width: 4px; height: 4px; }
+/*.p_info {font-size:14px; padding-top:11.5px; font-weight: 400; letter-spacing: -0.8px; }*/
 
 .pop_wrap .pop_content {
     position: absolute;
@@ -424,7 +426,7 @@ function click_pass2()
                             </fieldset>
 
                        </div>
-					   <p class="p_info">* 이메일은 로그인을 하거나 각종 공지를 위해 사용됩니다.<br>
+					   <p class="p_info">이메일은 로그인을 하거나 각종 공지를 위해 사용됩니다.<br>
    정확한 이메일을 입력해 주세요 </p>
                      </li>
 
@@ -463,7 +465,7 @@ function click_pass2()
 								 <i class="fa-times4"  style="display:none; cursor:pointer;" onclick="phone_check()">인증번호 전송</i>
 
 								 <input type="text" id="input_phone2" name="phone2" value="" title="휴대폰번호 인증" placeholder="인증번호를 입력해 주세요" class="login_input" style="text-indent: 0px; display:none;" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-								 <i class="fa-times5"  style="display:none; " onclick="#">4 :55</i>
+								 <i class="fa-times5"  style="display:none; " onclick="#"> <span class="v0403">04:55</span> <span class="v0404">확인</span></i>
                             </fieldset>
                        </div>
                      </li>
@@ -511,7 +513,7 @@ function click_pass2()
                            </li>
 
 
-                                 <input type="text" id="input_e" name="etc" value="" title="이름" placeholder="기타 방문경로를 입력해 주세요." class="login_input" style="text-indent: 0px; margin-left: 16px;width: 95%;
+                                  <input type="text" id="input_e" name="etc" value="" title="이름" placeholder="기타 방문경로를 입력해 주세요." class="login_input" style="text-indent: 0px; margin-left: 8vw;width: 80%;
     font-size: 14px;" >
 
                             </label>

@@ -71,7 +71,35 @@
 			
 		}
 .tabcontent h4 {font-size:14px; font-weight:700; text-align:left; color: #1a1a1a; padding-bottom: 12px;}
-.tabcontent p {font-size:14px; font-weight:400; text-align:left; color: #1a1a1a; padding-bottom: 8vw;}
+/*.tabcontent li {font-size:14px; font-weight:400; text-align:left; color: #1a1a1a; padding-bottom: 8vw;}*/
+
+  .tabcontent li{    position: relative;
+    padding: 0 0 0px 10px;
+    font-size: 14px;
+    line-height: 20px; margin-bottom: 12px !important;}
+
+.tabcontent  ul li:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    background: #666;
+    border-radius: 100%;
+}
+
+
+.tabcontent  ul .b2:before {
+    content: '\203B';
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    background: none;
+    border-radius: 100%;
+}
 
 </style>
 
@@ -107,23 +135,26 @@
 
 		<div id="tab1" class="tabcontent current">
 			<h4>■ 개인정보 제3자 제공 동의 (필수)</h4>
-			<p><br>제공 받는자 : 제휴 매장<br><br>
-            제공 목적 <br>
+			
+			<ul>
+			<li>제공 받는자 : 제휴 매장</li>
+			
+           <li> 제공 목적 <br>
   - ＂반려동물 미용, 호텔, 유치원 예약서비스 이용계약<br> 
-이행 (서비스 제공, 확인, 이용자정보확인)”<br><br>
+이행 (서비스 제공, 확인, 이용자정보확인)”</li>
 
-제공하는 항목 <br>
+<li>제공하는 항목 <br>
   - 예약한 서비스의 이용자 정보<br>
-    (예약자 이름, 휴대폰번호, 이름, 이메일)<br><br>
+    &nbsp;&nbsp;(예약자 이름, 휴대폰번호, 이름, 이메일)</li><br>
 
-※ 위 동의 내용을 거부 하실 수는 있으나 동의를 거부 
-      하실 경우 서비스를 이용하실 수 없습니다. <br><br>
+<li class="b2" style="padding-left:18px;">위 동의 내용을 거부 하실 수는 있으나 동의를 거부 
+      하실 경우 서비스를 이용하실 수 없습니다.</li><br>
 
-※ 개인정보 처리와 관련된 상세 내용은 
+<li class="b2"  style="padding-left:18px;">개인정보 처리와 관련된 상세 내용은 
       ‘개인정보처리방침’ 을 참고
 
-
-</p>
+</li>
+</ul>
 	
 
                 </div>
