@@ -30,6 +30,9 @@
 <link rel="stylesheet" href="../resources/css/swiper.min.css">
 <script src="../resources/js/swiper.min.js"></script>
 
+<link rel="stylesheet" href="../resources/css/jquery.fancybox.css?<?=time()?>">
+<script src="../resources/js/jquery.fancybox.min.js"></script>
+
 
 </head>
 <body>
@@ -60,21 +63,21 @@
 
             <div class="swiper-wrapper">
                 <div class="swiper-slide gallery">
-                    <a href="img/full/01.jpg">
+                    <a href="img/full/01.jpg" data-fancybox="group" >
                         <figure>
                             <img src="img/thumb/01.jpg" alt="" />
                         </figure>
                     </a>
                 </div>
                 <div class="swiper-slide gallery">
-                     <a href="img/thumb/02.jpg">
+                     <a href="img/full/02.jpg" data-fancybox="group" >
                         <figure>
                             <img src="img/thumb/02.jpg" alt="" />
                         </figure>
                     </a>
                 </div>
                 <div class="swiper-slide gallery">
-                    <a href="img/thumb/03.jpg">
+                   <a href="img/full/03.jpg" data-fancybox="group" >
                         <figure>
                             <img src="img/thumb/03.jpg" alt="" />
                         </figure>
@@ -84,24 +87,16 @@
             <div class="swiper-pagination"></div>
         </section>
         <!-- //메인비주얼 -->
+ <p class="imglist" style="display:none;">
+   
+      <img src="img/thumb/01.jpg" alt="" />
 
-<div class="container" style="display:none;">
-    <div class="gallery1">
-        <a href="img/full/01.jpg" class="big"><img src="img/thumb/01.jpg" alt="" title="Beautiful Image" /></a>
-        <a href="img/full/02.jpg" class="big"><img src="img/thumb/02.jpg" alt="" title=""/></a>
-        <a href="img/full/03.jpg" class="big"><img src="img/thumb/03.jpg" alt="" title="Beautiful Image"/></a>
-        <div class="clear"></div>
-    </div>
-    <br>
-    <p>All images are free availabled on <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
-    <p>Documentation and download <a target="_blank" href="https://simplelightbox.com">here</a></p>
-</div>
-<script src="../dist/simple-lightbox.js?v4"></script>
-<script>
-(function() {
-    var $gallery = new SimpleLightbox('.gallery a', {});
-})();
-</script>
+    
+     <img src="img/thumb/02.jpg" alt="" />
+    
+    <img src="img/thumb/03.jpg" alt="" />
+  </p>
+  
 
 
 
@@ -521,5 +516,39 @@ $(window).scroll(function() {
             </div>
           </div>
         <!-- //반려동물 제품 레이어팝업 -->
+		<script>
+$('[data-fancybox]').fancybox({
+  // Options will go here
+   buttons: [
+   
+    //"share",
+  
+    //"fullScreen",
+    //"download",
+   
+    "close"
+  ],
+
+  idleTime: false,
+
+  wheel : false,
+  transitionEffect: "slide",
+   // thumbs          : false,
+  // hash            : false,
+  loop            : true,
+  // keyboard        : true,
+  toolbar         : true,
+  // animationEffect : false,
+   arrows          : false,
+  clickContent    : false,
+  clickSlide: false,
+
+
+
+   clickOutside: false
+
+});
+</script>
+
 </body>
 </html>

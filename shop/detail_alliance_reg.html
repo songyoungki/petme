@@ -10,6 +10,7 @@
 <title>펫미</title>
 <link rel="stylesheet" href="../resources/css/common.css?<?=time()?>">
 <link rel="stylesheet" href="../resources/css/shop.css?<?=time()?>">
+
 <link rel="stylesheet" href="../resources/css/mobiscroll.jquery.min.css">
 
 <script src="../resources/js/jquery-3.4.1.js"></script>
@@ -18,7 +19,7 @@
 <!-- 스와이퍼 4.5.1 -->
 <link rel="stylesheet" href="../resources/css/swiper.min.css">
 <script src="../resources/js/swiper.min.js"></script>
-<script src="../resources/js/mobiscroll.jquery.min.js"></script>
+<!-- <script src="../resources/js/mobiscroll.jquery.min.js"></script> -->
 <style>
 input[type=checkbox] {
     display:none;
@@ -39,7 +40,10 @@ input[type=checkbox] {
 #checker2:checked + label {
     background-image: url('../images/shop/review_check_on.png');
 }
+
 </style>
+
+
 
 <script>
 function lo_check()
@@ -64,46 +68,23 @@ function lo_check()
 <body>
 
 <div class="wrap" id="wrap">
-    <!-- 상단 -->
-
-
-<!-- 내주변 매장 포트폴리오 -->
-       <section class="shop_section_reg">
-	    	<div class="detail_stick2">
-	                    <div class="detail_stick2_inner">
-		                  
-                    		<span class="t2">반려동물 등록</span>
+      <section class="shop_section_reg">
+            <div class="">
+                <div class="sect_title">
+                 
+				 <div class="detail_review">
+	   <div class="detail_review_inner">
+		
+		<span class="t2">반려동물 등록</span>
                     		<span class="t3"><img  src="../images/shop/icon_x_48_b.png"></span>
-				        </div>
-          </div>
-		   <div class="panel"></div>
+				 </div>
+              </div>
 
-		  <script>
-$(window).scroll(function() {
-    if(($(window).scrollTop() - $('.panel').offset().top > 0) == true)
-    {
-        $('.detail_stick2').show();
-        $('.tab').css('top', '60px');
-		$('.tab').css('box-shadow', '2px 3px 5px 0px #ededed');
-    }
-    else
-    {
-        $('.detail_stick2').hide();
-        $('.tab').css('top', '0px');
-		$('.tab').css('box-shadow', 'none');
-    }
-});
-</script>
+		
             <div class="">
                 <div class="sect_title">
 
-				 <div class="detail_review">
-	   <div class="detail_review_inner">
-
-		<span class="t2">반려동물 등록</span>
-		<span class="t3"><img  src="../images/shop/icon_x_48_b.png"></span>
-				 </div>
-              </div>
+		
 
 
        <div class="reg_img">
@@ -299,6 +280,7 @@ $('#show-picker').click(function () {
 function dial_click()
 {
     $(".js-dial").addClass("active");
+	$('body').css("overflow", "hidden");
 }
 function dial_ok()
 {
